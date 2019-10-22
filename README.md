@@ -1,2 +1,5 @@
 # z5-sdk-java-core
-Core Java pojos and endpoint strings. This project is a dependency for the other z5-sdk-java-* projects.
+
+The repository has core/common pojo objects for use with the Zone 5 Java SDKs.
+
+This project is a dependency for the other z5-sdk-java-* projects.

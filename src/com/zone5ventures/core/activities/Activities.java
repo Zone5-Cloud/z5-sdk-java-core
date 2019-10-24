@@ -1,9 +1,15 @@
 package com.zone5ventures.core.activities;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.TimeZone;
 
 import com.zone5ventures.core.enums.ActivityResultType;
+import com.zone5ventures.core.enums.ActivityType;
 import com.zone5ventures.core.enums.RelativePeriod;
+import com.zone5ventures.core.search.DateRange;
+import com.zone5ventures.core.search.SearchInput;
 import com.zone5ventures.core.search.SearchInputReport;
 
 public class Activities {
@@ -27,7 +33,9 @@ public class Activities {
 	public static final String PEAK_WKG = "/rest/reports/activity/peakwkg/get";
 	public static final String PEAK_PACE = "/rest/reports/activity/peakspace/get";
 	public static final String PEAK_LSS = "/rest/reports/activity/peakslss/get";
-	public static final String PEAK_LSSKG = "/rest/reports/activity/peakslsskg/get";	
+	public static final String PEAK_LSSKG = "/rest/reports/activity/peakslsskg/get";
+	
+	public static final String METRICS = "/rest/reports/metrics/summary/get";
 	
 	/** Return a SearchInputReport which can be used for reporting endpoints - ie time in zone for a given activity */
     public static SearchInputReport newInstance(ActivityResultType type, long activityId) {
@@ -45,5 +53,35 @@ public class Activities {
     		s.setAlltime(true);
     	}    
     	return s;
+    }
+    
+    public static SearchInput<SearchInputReport> newInstanceMetrics(ActivityType sport, List<Long> userIds, List<DateRange> ranges, List<String> fields) {
+    	
+    	if (sport == null)
+			throw new NullPointerException("sport is a required field");
+		
+		if (userIds == null || userIds.isEmpty())
+			throw new NullPointerException("At least one userId must be set");
+		
+		if (fields == null || fields.isEmpty())
+			throw new NullPointerException("At least one field must be set");
+		
+		if (ranges == null)
+			ranges = new ArrayList<>(1);
+		
+		if (ranges.isEmpty())
+			ranges.add(new DateRange(0L, System.currentTimeMillis(), TimeZone.getDefault().getID()));
+		
+		SearchInput<SearchInputReport> s = new SearchInput<>();
+		s.setCriteria(new SearchInputReport());
+		
+		s.setOpts(3L);
+		s.setFields(fields);
+		
+		s.getCriteria().setUserIds(userIds);
+		s.getCriteria().setRanges(ranges);
+		s.getCriteria().setType(sport);
+		
+		return s;
     }
 }

@@ -17,6 +17,9 @@ public class Routes {
 	public static final String DOWNLOAD_FIT = "/rest/users/route/download/v2/{routeId}/fit";
 	public static final String DOWNLOAD_GPX = "/rest/users/route/download/v2/{routeId}/gpx";
 	
+	public static final String DOWNLOAD_STAGES_SRO = "/rest/users/route/download/{routeId}/stages";
+	public static final String DOWNLOAD_STAGES_FIT = "/rest/users/route/download/{routeId}/fit";
+		
 	public static final String CLONE_ACTIVITY = "/rest/users/route/clone/files/{fileId}";
 	public static final String CLONE_ROUTE = "/rest/users/route/clone/route/{fileId}";
 }

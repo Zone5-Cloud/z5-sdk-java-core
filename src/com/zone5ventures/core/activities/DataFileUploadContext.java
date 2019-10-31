@@ -40,7 +40,18 @@ public class DataFileUploadContext {
 	/** A bit mask of UserConnectionsType.java ordinals - which 3rd party sites should be try to upload this file to */
 	private Long pushMask;
 	
+	/** A external bike UUID - used for component tracking */
+	private String bikeId;
+	
 	public DataFileUploadContext() {}
+	
+	public String getBikeId() {
+		return bikeId;
+	}
+	
+	public void setBikeId(String bikeId) {
+		this.bikeId = bikeId;
+	}
 
 	public Long getUserId() {
 		return userId;

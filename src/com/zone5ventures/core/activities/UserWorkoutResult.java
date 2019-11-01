@@ -618,10 +618,29 @@ public class UserWorkoutResult {
 	private UserWorkoutResultByHour hour;
 	
 	private UserWorkoutResultTurbo turbo;
+	private UserWorkoutResultBike bike;
+	private UserWorkoutResultGears gears;
+	
 	
 	private List<UserWorkoutResultChannel> channels;
 		
 	public UserWorkoutResult() { }
+	
+	public UserWorkoutResultGears getGears() {
+		return gears;
+	}
+	
+	public void setGears(UserWorkoutResultGears gears) {
+		this.gears = gears;
+	}
+	
+	public UserWorkoutResultBike getBike() {
+		return bike;
+	}
+	
+	public void setBike(UserWorkoutResultBike bike) {
+		this.bike = bike;
+	}
 	
 	public List<UserWorkoutResultChannel> getChannels() {
 		return channels;

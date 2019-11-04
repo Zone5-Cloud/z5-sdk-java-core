@@ -37,6 +37,11 @@ public class Activities {
 	
 	public static final String METRICS = "/rest/reports/metrics/summary/get";
 	
+	// Specialized only - set/delete bikeId
+	public static final String SET_BIKE = "/rest/users/activities/set/bike/{activityType}/{activityId}/{bikeId}";
+	public static final String REM_BIKE = "/rest/users/activities/rem/bike/{activityType}/{activityId}";
+	
+	
 	/** Return a SearchInputReport which can be used for reporting endpoints - ie time in zone for a given activity */
     public static SearchInputReport newInstance(ActivityResultType type, long activityId) {
     	SearchInputReport s = new SearchInputReport();

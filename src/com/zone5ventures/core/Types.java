@@ -13,6 +13,7 @@ import com.zone5ventures.core.routes.UserRoute;
 import com.zone5ventures.core.search.MappedResult;
 import com.zone5ventures.core.search.MappedSearchResult;
 import com.zone5ventures.core.search.SearchResult;
+import com.zone5ventures.core.thirdpartyconnections.ThirdPartyTokenResponse;
 import com.zone5ventures.core.users.User;
 
 public class Types {
@@ -29,4 +30,5 @@ public class Types {
 	public static final Type USER = new TypeToken<User>(){}.getType();
 	public static final Type BOOLEAN = new TypeToken<Boolean>(){}.getType();
 	public static final Type OAUTHTOKEN = new TypeToken<OAuthToken>(){}.getType();
+	public static final Type THIRD_PARTY_TOKEN_RESPONSE = new TypeToken<ThirdPartyTokenResponse>(){}.getType();
 }

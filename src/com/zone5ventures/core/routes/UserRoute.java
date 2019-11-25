@@ -12,12 +12,13 @@ import com.zone5ventures.core.users.User;
 
 public class UserRoute {
 
+	/** The unique database id for this route. Also know as a routeId */
 	private Long id;
 	
-	/** When this object was first created */
+	/** Epoch timestamp in ms for when the route was first created */
 	private Long createdTime;
 	
-	/** When this object was last modified */
+	/** Epoch timestamp in ms for when the route was last modified */
 	private Long modifedTime;
 	
 	/** Who created this object */
@@ -34,7 +35,7 @@ public class UserRoute {
 	/** The number of times this route should be completed */
 	private Short rpt;
 		
-	/** A nice name for this route */
+	/** A nice display name for this route */
 	private String name;
 	
 	/** The origin of how this route came into the system. ie created manually, cloned from an activity, synced from Strava etc */
@@ -43,31 +44,31 @@ public class UserRoute {
 	/** The original UUID/id of this route in it's origin system */
 	private String sourceId;
 	
-	/** The locality of where this route begins */
+	/** The locality name of where this route begins */
 	private String locality;
 	
-	/** The mid locality of this route */
+	/** The mid locality name of this route */
 	private String locality1;
 	
-	/** The locality of where this route ends */
+	/** The locality name of where this route ends */
 	private String locality2;
 	
-	/** The language that the way point messages are in */
+	/** The language that the way point messages are in (when the route builder UI has been used) */
 	private String locale;
 	
-	/** The metric/imperial that the way point messages are in */
+	/** The metric/imperial that the way point messages are in (when the route builder UI has been used) */
 	private UnitMeasurement units;
 	
 	/** A description of this route */
 	private String descr;
 	
-	/** The total distance (meters) of this route */
+	/** The total estimated distance (meters) of this route */
 	private Double distance;
 	
-	/** The total elevation gain (meters) of this route */
+	/** The total estimated elevation gain (meters) of this route */
 	private Integer ascent;
 	
-	/** The total elevation loss (meters) of this route */
+	/** The total estimated elevation loss (meters) of this route */
 	private Integer descent;
 	
 	/** The estimated time for this route (seconds) */
@@ -97,10 +98,10 @@ public class UserRoute {
 	/** The sport type for this route - ie cycling, running etc */
 	private ActivityType type;
 	
-	/** The recommended cycling equipment for this route - ie TT, road, mtb etc */
+	/** The recommended cycling equipment for this route - ie TT, road, mtb etc - as set by a user */
 	private Set<Equipment> equipment;
 	
-	/** User type of terrain in this route */
+	/** User set style of terrain in this route */
 	private Set<Terrain> terrain;
 	
 	/** User defined tags for this route */
@@ -138,6 +139,7 @@ public class UserRoute {
 	/** The number of public ratings (if any) */
 	private Integer publicRatingCnt;
 	
+	/** A unique UUID for this route - can be used in sharing route related URLs */
 	private String uuid;
 	
 	public UserRoute() {}

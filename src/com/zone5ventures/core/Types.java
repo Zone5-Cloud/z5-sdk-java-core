@@ -2,6 +2,7 @@ package com.zone5ventures.core;
 
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.reflect.TypeToken;
 import com.zone5ventures.core.activities.DataFileUploadIndex;
@@ -28,6 +29,7 @@ public class Types {
 	public static final Type ACTIVITY = new TypeToken<VActivity>(){}.getType();
 	public static final Type RESULT_ROUTE = new TypeToken<UserRoute>(){}.getType();
 	public static final Type USER = new TypeToken<User>(){}.getType();
+	public static final Type MAP = new TypeToken<Map<String,Object>>(){}.getType();
 	public static final Type BOOLEAN = new TypeToken<Boolean>(){}.getType();
 	public static final Type OAUTHTOKEN = new TypeToken<OAuthToken>(){}.getType();
 	public static final Type THIRD_PARTY_TOKEN_RESPONSE = new TypeToken<ThirdPartyTokenResponse>(){}.getType();

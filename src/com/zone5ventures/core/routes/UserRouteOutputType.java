@@ -17,6 +17,8 @@ public enum UserRouteOutputType {
 	// Static map
 	png,
 	// Web UI js format for saving a route
-	js;
+	js,
+	// A static image of the routes elevation profile
+	areachart;
 
 }

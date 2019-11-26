@@ -16,19 +16,19 @@ public class UserRouteSearch {
 	/** Field name to a numeric range. ie minAlt: [1000,1500] - used to search a range for numeric fields */
 	private Map<String, List<Double>> ranges;
 	
-	/** Route attributes to search on */
+	/** Limit the search to attributes within a route */
 	private UserRoute route;
 	
-	/** User Ids to search on */
+	/** Limit the search to routes owned/created by these userIds */
 	private List<Long> userIds;
 	
 	/** Order by fields ascending/descending */
 	private List<Order> orderBy;
 	
-	/** Specific UserRoute id's to include in the query */
+	/** Specific UserRoute id's to limit the search results to */
 	private List<Long> ids;
 		
-	/** Geobound the search - use in conjunction of the route.lat1, route.lon1 etc (meters) */
+	/** Geobound the search - use in conjunction of the route.lat1, route.lon1 etc (km) */
 	private Integer radius;
 	
 	public UserRouteSearch() {}

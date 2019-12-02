@@ -18,8 +18,13 @@ public class Activities {
 	public static final String NEXT = "/rest/users/activities/page/{offset}/{count}";
 	public static final String UPLOAD = "/rest/files/upload";
 	public static final String DELETE = "/rest/users/activities/rem/{activityType}/{activityId}/false";
-	public static final String FILE_INDEX_STATUS = "/rest/v2/files/get/{indexId}";
 	
+	public static final String FILE_INDEX_STATUS = "/rest/v2/files/get/{indexId}";
+	public static final String FILE_INDEX_DOWNLOAD = "/rest/v2/files/download/{indexId}";
+	public static final String FILE_INDEX_CANCEL = "/rest/v2/files/rem/{indexId}";
+	public static final String FILE_INDEX_RETRY = "/rest/v2/files/retry/{indexId}";
+	public static final String FILE_INDEX_STATUS_RECENT = "/rest/v2/files/get/data/user/{userId}/{secs}";
+
 	public static final String DOWNLOAD_FIT = "/rest/files/download/{fileId}";
 	
 	public static final String DOWNLOAD_RAW3 = "/rest/users/activities/download/files/{fileId}/raw3";

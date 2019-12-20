@@ -21,6 +21,9 @@ public class RegisterUser {
 	/** Optional - phone number */
 	private String tn;
 	
+	/** Optional - date of birth - UTC timestamp */
+	private Long dob;
+	
 	/** Optional - A Java Locale ID */
 	private String locale;
 	
@@ -201,5 +204,13 @@ public class RegisterUser {
 
 	public void setParams(Map<String, String> params) {
 		this.params = params;
+	}
+	
+	public Long getDob() {
+		return dob;
+	}
+	
+	public void setDob(Long dob) {
+		this.dob = dob;
 	}
 }

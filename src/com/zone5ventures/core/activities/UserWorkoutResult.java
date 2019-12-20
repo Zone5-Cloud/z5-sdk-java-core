@@ -1,5 +1,6 @@
 package com.zone5ventures.core.activities;
 
+import java.io.FileInputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -592,6 +593,8 @@ public class UserWorkoutResult {
 
 	private List<UserWorkoutResult> laps;
 	
+	private DataFileUploadIndex fileindex;
+	
 	private Map<DataFileChannel, Map<Integer, Integer>> distributions;
 	
 	// private List<VUserWorkoutResultSwimLap> swimLaps;
@@ -625,6 +628,14 @@ public class UserWorkoutResult {
 	private List<UserWorkoutResultChannel> channels;
 		
 	public UserWorkoutResult() { }
+	
+	public DataFileUploadIndex getFileindex() {
+		return fileindex;
+	}
+	
+	public void setFileindex(DataFileUploadIndex fileindex) {
+		this.fileindex = fileindex;
+	}
 	
 	public UserWorkoutResultGears getGears() {
 		return gears;

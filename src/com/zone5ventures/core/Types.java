@@ -10,6 +10,7 @@ import com.zone5ventures.core.activities.DataFileUploadRecent;
 import com.zone5ventures.core.activities.UserWorkoutResult;
 import com.zone5ventures.core.activities.UserWorkoutResultAggregates;
 import com.zone5ventures.core.activities.VActivity;
+import com.zone5ventures.core.day.UserDay;
 import com.zone5ventures.core.oauth.OAuthToken;
 import com.zone5ventures.core.routes.UserRoute;
 import com.zone5ventures.core.search.MappedResult;
@@ -21,6 +22,7 @@ import com.zone5ventures.core.users.User;
 public class Types {
 
 	public static final Type SEARCH_RESULT_ACTIVITIES = new TypeToken<MappedSearchResult<UserWorkoutResult>>(){}.getType();
+	public static final Type SEARCH_RESULT_DAY = new TypeToken<MappedSearchResult<UserDay>>(){}.getType();
 	public static final Type MAPPED_RESULT_ACTIVITIES = new TypeToken<MappedResult<UserWorkoutResult>>(){}.getType();
 	public static final Type MAPPED_RESULT_AGGREGATES = new TypeToken<MappedResult<UserWorkoutResultAggregates>>(){}.getType();
 	public static final Type LIST_RESULT_ACTIVITIES = new TypeToken<List<UserWorkoutResult>>(){}.getType();

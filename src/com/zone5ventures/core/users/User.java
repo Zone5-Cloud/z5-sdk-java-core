@@ -10,6 +10,8 @@ public class User {
 	
 	/** Unique email address */
 	private String email;
+	
+	private String password;
 		
 	private String firstname;
 	
@@ -20,6 +22,14 @@ public class User {
 	
 	public User() {
 		
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Long getId() {

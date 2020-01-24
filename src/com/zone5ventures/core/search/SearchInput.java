@@ -26,7 +26,7 @@ public class SearchInput<S> {
 	
 	public SearchInput(S criteria) { 
 		this.criteria = criteria; 
-		this.fields = new ArrayList<String>();
+		this.fields = new ArrayList<>();
 		this.opts = BitwiseUtils.set(0L, 0); // disable including the schema definition in the response
 	}
 

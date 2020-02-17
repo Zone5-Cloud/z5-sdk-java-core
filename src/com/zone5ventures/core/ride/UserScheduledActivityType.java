@@ -9,5 +9,8 @@ public enum UserScheduledActivityType {
 	demo,
 	
 	/** An event day */
-	event;
+	event,
+	
+	/** Trail building day */
+	soil;
 }

@@ -12,12 +12,14 @@ import com.zone5ventures.core.activities.UserWorkoutResultAggregates;
 import com.zone5ventures.core.activities.VActivity;
 import com.zone5ventures.core.day.UserDay;
 import com.zone5ventures.core.oauth.OAuthToken;
+import com.zone5ventures.core.oauth.OAuthTokenAlt;
 import com.zone5ventures.core.ride.UserScheduledActivity;
 import com.zone5ventures.core.routes.UserRoute;
 import com.zone5ventures.core.search.MappedResult;
 import com.zone5ventures.core.search.MappedSearchResult;
 import com.zone5ventures.core.search.SearchResult;
 import com.zone5ventures.core.thirdpartyconnections.ThirdPartyTokenResponse;
+import com.zone5ventures.core.users.LoginResponse;
 import com.zone5ventures.core.users.User;
 import com.zone5ventures.core.workouts.UserWorkoutSummary;
 
@@ -38,10 +40,13 @@ public class Types {
 	public static final Type RESULT_ROUTE = new TypeToken<UserRoute>(){}.getType();
 	public static final Type RESULT_RIDE = new TypeToken<UserScheduledActivity>(){}.getType();
 	public static final Type USER = new TypeToken<User>(){}.getType();
+	public static final Type LOGIN_RESPONSE = new TypeToken<LoginResponse>(){}.getType();
 	public static final Type MAP = new TypeToken<Map<String,Object>>(){}.getType();
+	public static final Type VOID = new TypeToken<Void>(){}.getType();
 	public static final Type BOOLEAN = new TypeToken<Boolean>(){}.getType();
 	public static final Type STRING = new TypeToken<String>(){}.getType();
 	public static final Type OAUTHTOKEN = new TypeToken<OAuthToken>(){}.getType();
+	public static final Type OAUTHTOKENALT = new TypeToken<OAuthTokenAlt>(){}.getType();
 	public static final Type THIRD_PARTY_TOKEN_RESPONSE = new TypeToken<ThirdPartyTokenResponse>(){}.getType();
 	public static final Type USER_WORKOUT_SUMMARY = new TypeToken<UserWorkoutSummary>(){}.getType();
 }

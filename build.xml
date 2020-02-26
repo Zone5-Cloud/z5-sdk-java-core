@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="z5-sdk-java-common">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+	<property name="mvn" value="/usr/local/apache-maven-3.3.9/bin/mvn"/>
+
+   <target name="build">
+   		<exec dir="." command="${mvn} package -Dmaven.test.skip=true" ></exec>
+   		<exec dir="." command="${mvn} install:install-file -Dfile=target/z5-sdk-java-core-0.0.2.jar -DgroupId=z5-sdk-java-common -DartifactId=z5-sdk-java-common -Dversion=0.0.1 -Dpackaging=jar" ></exec>
+	</target>
+</project> 

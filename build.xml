@@ -8,6 +8,6 @@
 
    <target name="build">
    		<exec dir="." command="${mvn} package -Dmaven.test.skip=true" ></exec>
-   		<exec dir="." command="${mvn} install:install-file -Dfile=target/z5-sdk-java-core-0.0.2.jar -DgroupId=z5-sdk-java-common -DartifactId=z5-sdk-java-common -Dversion=0.0.1 -Dpackaging=jar" ></exec>
+   		<exec dir="." command="${mvn} install:install-file -Dfile=target/z5-sdk-java-core-0.0.2.jar -DgroupId=com.zone5cloud -DartifactId=z5-sdk-java-core -Dversion=0.0.2 -Dpackaging=jar" ></exec>
 	</target>
 </project> 

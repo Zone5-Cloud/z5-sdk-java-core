@@ -8,7 +8,7 @@ public class Users {
 	public static final String NEW_ACCESS_TOKEN = "/rest/oauth/access_token";
 	public static final String ME = "/rest/users/me";
 	
-	public static final String GET_USER_PREFERENCES = "/rest/users/get/UserPreferences";
+	public static final String GET_USER_PREFERENCES = "/rest/users/prefs/{userId}";
 	public static final String SET_USER_PREFERENCES = "/rest/users/set/UserPreferences";
 	
 	public static final String DELETE_USER = "/rest/users/delete/{userId}";

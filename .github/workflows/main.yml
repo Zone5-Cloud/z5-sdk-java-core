@@ -26,6 +26,7 @@ jobs:
     - uses: s4u/maven-settings-action@v2
       with:
         servers: '[{"id": "github", "username": "${env.GITHUB_ACTOR}", "password": "${secrets.GITHUB_TOKEN}"}]'
+        githubServer: false
 
     - name: Debug settings file
       run: cat /home/runner/.m2/settings.xml

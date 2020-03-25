@@ -14,6 +14,7 @@
   </distributionManagement>
   <profiles>
             <profile>
+              <id>cicd</id> 
               <properties>
                 <sonar.projectKey>todaysplan_svc</sonar.projectKey>
                 <sonar.organization>todaysplan</sonar.organization>

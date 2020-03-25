@@ -33,7 +33,9 @@ jobs:
 
     - name: Debug vars
       run: echo ${env.GITHUB_ACTOR}
+    - name: Debug vars
       run: echo ${env.GITHUB_TOKEN}
+    - name: Debug vars
       run: echo ${secrets.GITHUB_TOKEN}
 
     - name: Build with Maven

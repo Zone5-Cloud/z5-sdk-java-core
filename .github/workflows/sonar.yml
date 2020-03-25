@@ -22,5 +22,5 @@ jobs:
 
     - name: Sonar Scan
       env:
-        SONAR_LOGIN: ${{ env.SONAR_LOGIN }}
+        SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
       run: mvn verify sonar:sonar -Pcicd -Dsonarlogin=${SONAR_LOGIN}

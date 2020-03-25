@@ -28,5 +28,8 @@ jobs:
       with:
         servers: '[{ "id": "github", "username": "$(echo $GITHUB_REPOSITORY | awk -F / {print $1})", "password": "${{ env.GITHUB_TOKEN }}" }]'
 
+    - name: Debug settings file
+      run: cat /home/runner/.m2/settings.xml
+
     - name: Build with Maven
       run: mvn deploy

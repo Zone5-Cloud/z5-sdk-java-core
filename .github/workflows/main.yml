@@ -26,7 +26,7 @@ jobs:
     - name: maven-settings-xml-action
       uses: whelk-io/maven-settings-xml-action@v4
       with:
-        servers: '[{ "id": "github", "username": $(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}'), "password": "${{ env.GITHUB_TOKEN }}" }]'
+        servers: '[{ "id": "github", "username": "$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $1}')", "password": "${{ env.GITHUB_TOKEN }}" }]'
 
     - name: Build with Maven
       run: mvn deploy

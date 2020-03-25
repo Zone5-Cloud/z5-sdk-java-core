@@ -23,7 +23,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    steps:
     - uses: s4u/maven-settings-action@v2
     - name: Debug settings file
       run: cat /home/runner/.m2/settings.xml

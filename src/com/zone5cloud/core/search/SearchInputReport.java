@@ -26,6 +26,9 @@ public class SearchInputReport {
 	
 	private List<DateRange> ranges;
 	
+	/** Limit search to UserBike.uuid */
+	private List<String> bikeUids;
+	
 	// private List<VTeamActivity> teamactivities;
 	
 	private List<VActivity> activities;
@@ -33,7 +36,7 @@ public class SearchInputReport {
 	/** Only include results related to these activities */
 	private List<VActivity> limit;
 	
-	// private String groupBy;
+	private String groupBy;
 	
 	// private VTeamMultiRidePeriod exclude;
 	
@@ -75,7 +78,23 @@ public class SearchInputReport {
 		opts = 3L;
 		// search.opts = search.opts | (1 << 0); // set that we don't need the verbose field mapping
 		// search.opts = search.opts | (1 << 1); // set a no-cache flag for this search
-		// search.opts = search.opts | (1 << 3); // set a no-decorate flag for this search
+		// search.opts = search.opts | (1 << 3); // set a no-decorate flag for this search (not needed if the tp-nodecorate header is set)
+	}
+	
+	public String getGroupBy() {
+		return groupBy;
+	}
+	
+	public void setGroupBy(String groupBy) {
+		this.groupBy = groupBy;
+	}
+	
+	public List<String> getBikeUids() {
+		return bikeUids;
+	}
+	
+	public void setBikeUids(List<String> bikeUids) {
+		this.bikeUids = bikeUids;
 	}
 	
 	public List<RelativePeriod> getReferences() {

@@ -69,7 +69,7 @@ public class Activities {
     public static SearchInput<SearchInputReport> newInstanceMetrics(ActivityType sport, List<Long> userIds, List<DateRange> ranges, List<String> fields) {
     	
     	if (sport == null)
-			throw new NullPointerException("sport is a required field");
+    		throw new NullPointerException("sport is a required field");
 		
 		if (userIds == null || userIds.isEmpty())
 			throw new NullPointerException("At least one userId must be set");
@@ -92,6 +92,34 @@ public class Activities {
 		s.getCriteria().setUserIds(userIds);
 		s.getCriteria().setRanges(ranges);
 		s.getCriteria().setType(sport);
+		
+		return s;
+    }
+    
+    /** 
+     * Build a metrics API query grouped by bike uuids - ie get summary stats by bike 
+     * 
+     * sport can not be null
+     * ranges can be null or empty - will default to all time
+     * fields should not be null or empty
+     * bikeUids should not be null or empty
+     * */
+    public static SearchInput<SearchInputReport> newInstanceMetricsBikes(List<DateRange> ranges, List<String> fields, List<String> bikeUids) {
+    	    	
+    	if (fields == null || fields.isEmpty())
+    		throw new NullPointerException("At least one field must be set");
+    	
+    	if (bikeUids == null || bikeUids.isEmpty())
+    		throw new NullPointerException("At least one bike uuid must be set");
+    	
+    	SearchInput<SearchInputReport> s = new SearchInput<>();
+    	s.setCriteria(new SearchInputReport());
+		s.setOpts(3L);
+		s.setFields(fields);
+		s.getCriteria().setRanges(ranges == null || ranges.isEmpty() ? null : ranges);
+		s.getCriteria().setType(ActivityType.ride);
+		s.getCriteria().setBikeUids(bikeUids);
+		s.getCriteria().setGroupBy("bike.uuid");
 		
 		return s;
     }

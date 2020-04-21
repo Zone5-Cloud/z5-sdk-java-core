@@ -5,6 +5,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.zone5cloud.core.enums.ActivityType;
+import com.zone5cloud.core.enums.UnitMeasurement;
 
 /** Data structure for registering a new user */
 public class RegisterUser {
@@ -42,6 +43,9 @@ public class RegisterUser {
 	/** Optional - Coach ID you wish to associate with */
 	private Long coachId;
 	
+	/** Optional - Preferred units of measurement */
+	private UnitMeasurement units;
+	
 	/** Optional - The athlete's threshold power for by sport */
 	private Map<ActivityType, UserThresholdPower> pwr;
 	
@@ -78,6 +82,14 @@ public class RegisterUser {
 		this.timezone = "Europe/Lisbon";
 	}
 
+	public UnitMeasurement getUnits() {
+		return units;
+	}
+	
+	public void setUnits(UnitMeasurement units) {
+		this.units = units;
+	}
+	
 	public String getEmail() {
 		return email;
 	}

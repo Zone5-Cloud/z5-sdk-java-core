@@ -20,6 +20,7 @@ public class Users {
 	public static final String LOGIN = "/rest/auth/login";
 	public static final String LOGOUT = "/rest/auth/logout";
 	public static final String EMAIL_EXISTS = "/rest/auth/exists";
+	public static final String EMAIL_STATUS = "/rest/auth/status";
 	public static final String PASSWORD_RESET = "/rest/auth/reset";
 	public static final String CHANGE_PASSWORD_SPECIALIZED = "/rest/auth/set/password"; 
 	public static final String REFRESH_TOKEN = "/rest/auth/refresh";

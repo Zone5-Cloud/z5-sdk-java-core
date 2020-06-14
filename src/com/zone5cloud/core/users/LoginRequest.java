@@ -1,5 +1,7 @@
 package com.zone5cloud.core.users;
 
+import java.util.List;
+
 public class LoginRequest {
 	
 	/** User email address */
@@ -16,6 +18,9 @@ public class LoginRequest {
 	
 	/** Your OAuth app secret (not needed for S-Digital systems) */
 	private String clientSecret;
+	
+	/** Allow for in-line acceptance of terms & conditions ids */
+	private List<String> accept;
 	
 	public LoginRequest() { }
 	
@@ -65,5 +70,13 @@ public class LoginRequest {
 
 	public void setClientSecret(String clientSecret) {
 		this.clientSecret = clientSecret;
+	}
+	
+	public List<String> getAccept() {
+		return accept;
+	}
+	
+	public void setAccept(List<String> accept) {
+		this.accept = accept;
 	}
 }

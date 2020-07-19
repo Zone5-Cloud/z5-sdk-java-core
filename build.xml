@@ -9,7 +9,7 @@
    <target name="build">
    		<exec dir="." outputproperty="revision" command="git describe"></exec>
    		
-   		<exec dir="." command="${mvn} package -Dmaven.test.skip=true -Drevision=${revision}" ></exec>
+   		<exec dir="." command="${mvn} clean package -Dmaven.test.skip=true -Drevision=${revision}" ></exec>
    		<exec dir="." command="${mvn} install:install-file -Dfile=target/z5-sdk-java-core-${revision}.jar -DgroupId=com.zone5cloud -DartifactId=z5-sdk-java-core -Dversion=${revision} -Dpackaging=jar" ></exec>
 	</target>
 </project> 

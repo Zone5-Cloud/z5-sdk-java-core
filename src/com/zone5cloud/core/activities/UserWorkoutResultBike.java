@@ -11,8 +11,14 @@ public class UserWorkoutResultBike {
 	/** Serial number of the bike */
 	private String serial;
 	
-	/** External system bike_id */
+	/** External system legacy bike_id */
 	private String uuid;
+	
+	/** External system bike id */
+	private String bikeUuid;
+	
+	/** External system bike registration id to a particular user */
+	private String registrationId;
 	
 	/** URL image */
 	private String avatar;
@@ -49,6 +55,22 @@ public class UserWorkoutResultBike {
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+	
+	public String getBikeUuid() {
+		return bikeUuid;
+	}
+
+	public void setBikeUuid(String uuid) {
+		this.bikeUuid = uuid;
+	}
+	
+	public String getRegistrationId() {
+		return registrationId;
+	}
+
+	public void setRegistrationId(String uuid) {
+		this.registrationId = uuid;
 	}
 
 	public String getAvatar() {

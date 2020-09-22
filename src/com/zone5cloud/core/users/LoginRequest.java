@@ -13,7 +13,7 @@ public class LoginRequest {
 	/** Set to true */
 	private Boolean token;
 	
-	/** Your OAuth app clientId (not needed for S-Digital systems) */
+	/** Your OAuth app clientId (optional for S-Digital systems) */
 	private String clientId;
 	
 	/** Your OAuth app secret (not needed for S-Digital systems) */

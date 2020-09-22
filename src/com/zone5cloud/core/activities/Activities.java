@@ -119,7 +119,7 @@ public class Activities {
 		s.getCriteria().setRanges(ranges == null || ranges.isEmpty() ? null : ranges);
 		s.getCriteria().setType(ActivityType.ride);
 		s.getCriteria().setBikeUids(bikeUids);
-		s.getCriteria().setGroupBy("bike.uuid");
+		s.getCriteria().setGroupBy("bike.bikeUuid");
 		
 		return s;
     }

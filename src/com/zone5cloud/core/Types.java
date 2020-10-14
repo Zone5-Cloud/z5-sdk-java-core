@@ -18,7 +18,9 @@ import com.zone5cloud.core.routes.UserRoute;
 import com.zone5cloud.core.search.MappedResult;
 import com.zone5cloud.core.search.MappedSearchResult;
 import com.zone5cloud.core.search.SearchResult;
+import com.zone5cloud.core.thirdpartyconnections.PushRegistrationResponse;
 import com.zone5cloud.core.thirdpartyconnections.ThirdPartyTokenResponse;
+import com.zone5cloud.core.thirdpartyconnections.UpgradeAvailableResponse;
 import com.zone5cloud.core.users.LoginResponse;
 import com.zone5cloud.core.users.User;
 import com.zone5cloud.core.users.UserPreferences;
@@ -51,5 +53,7 @@ public class Types {
 	public static final Type OAUTHTOKEN = new TypeToken<OAuthToken>(){}.getType();
 	public static final Type OAUTHTOKENALT = new TypeToken<OAuthTokenAlt>(){}.getType();
 	public static final Type THIRD_PARTY_TOKEN_RESPONSE = new TypeToken<ThirdPartyTokenResponse>(){}.getType();
+	public static final Type PUSH_REGISTRATION_RESPONSE = new TypeToken<PushRegistrationResponse>(){}.getType();
+	public static final Type UPGRADE_AVAILABLE_RESPONSE = new TypeToken<UpgradeAvailableResponse>(){}.getType();
 	public static final Type USER_WORKOUT_SUMMARY = new TypeToken<UserWorkoutSummary>(){}.getType();
 }

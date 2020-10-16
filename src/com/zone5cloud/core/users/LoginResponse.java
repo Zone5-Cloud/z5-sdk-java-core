@@ -23,6 +23,9 @@ public class LoginResponse {
 	/** Bearer token */
 	private String token;
 	
+	/** Refresh token */
+	private String refresh;
+	
 	/** Bearer token expiry (ms since Epoch) */
 	private Long tokenExp;
 	
@@ -66,6 +69,14 @@ public class LoginResponse {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+	
+	public String getRefresh() {
+		return refresh;
+	}
+
+	public void setRefresh(String refresh) {
+		this.refresh = refresh;
 	}
 
 	public Long getTokenExp() {

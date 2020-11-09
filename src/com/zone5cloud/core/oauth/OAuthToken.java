@@ -8,7 +8,7 @@ public class OAuthToken {
 	
 	private String token_type;
 	
-	private Integer expires;
+	private Integer expires_in;
 	
 	public OAuthToken() { }
 
@@ -36,11 +36,11 @@ public class OAuthToken {
 		this.token_type = token_type;
 	}
 
-	public Integer getExpires() {
-		return expires;
+	public Integer getExpires_in() {
+		return expires_in;
 	}
 
-	public void setExpires(Integer expires) {
-		this.expires = expires;
+	public void setExpires_in(Integer expires) {
+		this.expires_in = expires;
 	}
 }

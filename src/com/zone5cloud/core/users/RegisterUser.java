@@ -65,7 +65,7 @@ public class RegisterUser {
 	private Map<String, String> params;
 	
 	public RegisterUser() {
-		
+		this.locale = Locale.getDefault().toString();
 	}
 	
 	public RegisterUser(String email, String firstname, String lastname, double weightKg, int thresholdWatts, String nic, String invite) {
@@ -78,7 +78,7 @@ public class RegisterUser {
 		this.tags = nic;
 		this.delegate = invite;
 		this.password = invite;
-		this.locale = Locale.ENGLISH.toString();
+		this.locale = Locale.getDefault().toString();
 		this.timezone = "Europe/Lisbon";
 	}
 

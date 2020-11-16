@@ -17,6 +17,8 @@ public class User {
 	
 	private String lastname;	
 	
+	private String locale;
+	
 	/** URL to an avatar image */
 	private String avatar;
 	
@@ -78,5 +80,13 @@ public class User {
 
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
+	}
+	
+	public String getLocale() {
+		return locale;
+	}
+	
+	public void setLocale(String locale) {
+		this.locale = locale;
 	}
 }

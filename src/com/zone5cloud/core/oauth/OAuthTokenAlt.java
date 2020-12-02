@@ -1,6 +1,7 @@
 package com.zone5cloud.core.oauth;
 
-public class OAuthTokenAlt {
+@Deprecated
+public class OAuthTokenAlt extends AuthToken {
 	
 	private String token;
 	
@@ -8,6 +9,7 @@ public class OAuthTokenAlt {
 		
 	public OAuthTokenAlt() { }
 
+	@Override
 	public String getToken() {
 		return token;
 	}
@@ -16,11 +18,18 @@ public class OAuthTokenAlt {
 		this.token = token;
 	}
 
+	@Override
 	public Long getTokenExp() {
 		return tokenExp;
 	}
 
 	public void setTokenExp(Long tokenExp) {
 		this.tokenExp = tokenExp;
+	}
+	
+	@Override
+	public String getRefreshToken() {
+		// there is no refresh on Gigya tokens
+		return null;
 	}
 }

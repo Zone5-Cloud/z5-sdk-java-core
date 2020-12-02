@@ -1,5 +1,7 @@
 package com.zone5cloud.core.users;
 
+import java.util.Map;
+
 public class User {
 	
 	/** Unique user id (within Z5/TP database) */
@@ -17,10 +19,14 @@ public class User {
 	
 	private String lastname;	
 	
-	private String locale;
-	
 	/** URL to an avatar image */
 	private String avatar;
+	
+	private String locale;
+	
+	private String timezone;
+	
+	private Map<String, String> identities;
 	
 	public User() {
 		
@@ -88,5 +94,21 @@ public class User {
 	
 	public void setLocale(String locale) {
 		this.locale = locale;
+	}
+
+	public String getTimezone() {
+		return timezone;
+	}
+
+	public void setTimezone(String timezone) {
+		this.timezone = timezone;
+	}
+
+	public Map<String, String> getIdentities() {
+		return identities;
+	}
+
+	public void setIdentities(Map<String, String> identities) {
+		this.identities = identities;
 	}
 }

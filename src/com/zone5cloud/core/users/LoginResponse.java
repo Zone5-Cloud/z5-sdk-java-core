@@ -29,6 +29,9 @@ public class LoginResponse {
 	/** Bearer token expiry (ms since Epoch) */
 	private Long tokenExp;
 	
+	/** Bearer token expiry (seconds from now) */
+	private Integer expiresIn;
+	
 	public LoginResponse() { }
 
 	public List<Long> getCompanies() {
@@ -85,5 +88,13 @@ public class LoginResponse {
 
 	public void setTokenExp(Long tokenExp) {
 		this.tokenExp = tokenExp;
+	}
+
+	public Integer getExpiresIn() {
+		return expiresIn;
+	}
+
+	public void setExpiresIn(Integer expiresIn) {
+		this.expiresIn = expiresIn;
 	}	
 }

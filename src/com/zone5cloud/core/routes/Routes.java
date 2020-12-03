@@ -22,5 +22,7 @@ public class Routes {
 		
 	public static final String CLONE_ACTIVITY = "/rest/users/route/clone/files/{fileId}";
 	public static final String CLONE_ROUTE = "/rest/users/route/clone/route/{fileId}";
+	
+	private Routes() {}
 }
 

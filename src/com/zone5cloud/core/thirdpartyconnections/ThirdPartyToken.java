@@ -1,22 +1,26 @@
 package com.zone5cloud.core.thirdpartyconnections;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ThirdPartyToken {
 
 	private String token;
 	
-	private String refresh_token;
+	@SerializedName("refresh_token")
+	private String refreshToken;
 	
 	private String scope;
 	
-	private Integer expires_in;
+	@SerializedName("expires_in")
+	private Integer expiresIn;
 	
 	public ThirdPartyToken() { }
 	
-	public ThirdPartyToken(String token, String refresh_token, String scope, Integer expires_in) {
+	public ThirdPartyToken(String token, String refreshToken, String scope, Integer expiresIn) {
 		this.token = token;
-		this.refresh_token = refresh_token;
+		this.refreshToken = refreshToken;
 		this.scope = scope;
-		this.expires_in = expires_in;
+		this.expiresIn = expiresIn;
 	}
 
 	public String getToken() {
@@ -27,12 +31,12 @@ public class ThirdPartyToken {
 		this.token = token;
 	}
 
-	public String getRefresh_token() {
-		return refresh_token;
+	public String getRefreshToken() {
+		return refreshToken;
 	}
 
-	public void setRefresh_token(String refresh_token) {
-		this.refresh_token = refresh_token;
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
 	}
 
 	public String getScope() {
@@ -43,12 +47,12 @@ public class ThirdPartyToken {
 		this.scope = scope;
 	}
 
-	public Integer getExpires_in() {
-		return expires_in;
+	public Integer getExpiresIn() {
+		return expiresIn;
 	}
 
-	public void setExpires_in(Integer expires_in) {
-		this.expires_in = expires_in;
+	public void setExpiresIn(Integer expiresIn) {
+		this.expiresIn = expiresIn;
 	}
 	
 	

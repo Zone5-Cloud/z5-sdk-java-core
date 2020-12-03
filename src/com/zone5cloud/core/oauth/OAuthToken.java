@@ -1,46 +1,96 @@
 package com.zone5cloud.core.oauth;
 
-public class OAuthToken {
+import com.google.gson.annotations.SerializedName;
+import com.zone5cloud.core.users.LoginResponse;
+
+public class OAuthToken extends AuthToken {
 	
-	private String access_token;
+	@SerializedName(value = "access_token", alternate = "token")
+	private String token;
 	
-	private String refresh_token;
+	@SerializedName("refresh_token")
+	private String refreshToken;
 	
-	private String token_type;
+	@SerializedName("token_type")
+	private String tokenType;
 	
-	private Integer expires_in;
+	@SerializedName("expires_in")
+	private Integer expiresIn;
+	
+	private Long tokenExp;
+	
+	private String scope;
 	
 	public OAuthToken() { }
-
-	public String getAccess_token() {
-		return access_token;
+	
+	public OAuthToken(String token, String refresh, Long tokenExp) {
+		this.token = token;
+		this.refreshToken = refresh;
+		this.tokenExp = tokenExp;
+	}
+	
+	public OAuthToken(LoginResponse login) {
+		if (login != null) {
+			setToken(login.getToken());
+			setRefreshToken(login.getRefresh());
+			setTokenExp(login.getTokenExp());
+			if (login.getExpiresIn() != null) {
+				setExpiresIn(login.getExpiresIn());
+				setTokenExp(System.currentTimeMillis() + (login.getExpiresIn() * 1000));
+			}
+		}
 	}
 
-	public void setAccess_token(String access_token) {
-		this.access_token = access_token;
+	@Override
+	public String getToken() {
+		return token;
 	}
 
-	public String getRefresh_token() {
-		return refresh_token;
+	public void setToken(String accessToken) {
+		this.token = accessToken;
 	}
 
-	public void setRefresh_token(String refresh_token) {
-		this.refresh_token = refresh_token;
+	@Override
+	public String getRefreshToken() {
+		return refreshToken;
 	}
 
-	public String getToken_type() {
-		return token_type;
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
 	}
 
-	public void setToken_type(String token_type) {
-		this.token_type = token_type;
+	public String getTokenType() {
+		return tokenType;
 	}
 
-	public Integer getExpires_in() {
-		return expires_in;
+	public void setTokenType(String tokenType) {
+		this.tokenType = tokenType;
 	}
 
-	public void setExpires_in(Integer expires) {
-		this.expires_in = expires;
+	public Integer getExpiresIn() {
+		return expiresIn;
 	}
+
+	public void setExpiresIn(Integer expiresIn) {
+		this.expiresIn = expiresIn;
+	}
+
+	@Override
+	public Long getTokenExp() {
+		return tokenExp;
+	}
+
+	public void setTokenExp(Long tokenExp) {
+		this.tokenExp = tokenExp;
+	}
+
+	public String getScope() {
+		return scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
+
+	
 }

@@ -56,4 +56,6 @@ public class Types {
 	public static final Type PUSH_REGISTRATION_RESPONSE = new TypeToken<PushRegistrationResponse>(){}.getType();
 	public static final Type UPGRADE_AVAILABLE_RESPONSE = new TypeToken<UpgradeAvailableResponse>(){}.getType();
 	public static final Type USER_WORKOUT_SUMMARY = new TypeToken<UserWorkoutSummary>(){}.getType();
+	
+	public static final Type ERROR = new TypeToken<Z5Error>(){}.getType();
 }

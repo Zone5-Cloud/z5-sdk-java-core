@@ -6,6 +6,8 @@ public class Users {
 	private Users() { }
 	
 	public static final String NEW_ACCESS_TOKEN = "/rest/oauth/access_token";
+	public static final String NEW_ADHOC_ACCESS_TOKEN = "/rest/oauth/newtoken/{clientId}";
+	
 	public static final String ME = "/rest/users/me";
 	
 	public static final String GET_USER_PREFERENCES = "/rest/users/prefs/{userId}";

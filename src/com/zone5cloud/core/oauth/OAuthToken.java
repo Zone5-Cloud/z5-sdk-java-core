@@ -19,6 +19,8 @@ public class OAuthToken extends AuthToken {
 	
 	private Long tokenExp;
 	
+	private String scope;
+	
 	public OAuthToken() { }
 	
 	public OAuthToken(String token, String refresh, Long tokenExp) {
@@ -80,6 +82,14 @@ public class OAuthToken extends AuthToken {
 
 	public void setTokenExp(Long tokenExp) {
 		this.tokenExp = tokenExp;
+	}
+
+	public String getScope() {
+		return scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
 	}
 
 	

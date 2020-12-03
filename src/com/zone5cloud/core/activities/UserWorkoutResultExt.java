@@ -4,7 +4,6 @@ import com.zone5cloud.core.enums.RunType;
 import com.zone5cloud.core.enums.SwimType;
 import com.zone5cloud.core.enums.UnitMeasurement;
 
-;
 
 /** Extended result set */
 public class UserWorkoutResultExt {

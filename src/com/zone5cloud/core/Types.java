@@ -26,6 +26,7 @@ import com.zone5cloud.core.users.User;
 import com.zone5cloud.core.users.UserPreferences;
 import com.zone5cloud.core.workouts.UserWorkoutSummary;
 
+@SuppressWarnings("deprecation")
 public class Types {
 
 	public static final Type SEARCH_RESULT_ACTIVITIES = new TypeToken<MappedSearchResult<UserWorkoutResult>>(){}.getType();
@@ -56,4 +57,8 @@ public class Types {
 	public static final Type PUSH_REGISTRATION_RESPONSE = new TypeToken<PushRegistrationResponse>(){}.getType();
 	public static final Type UPGRADE_AVAILABLE_RESPONSE = new TypeToken<UpgradeAvailableResponse>(){}.getType();
 	public static final Type USER_WORKOUT_SUMMARY = new TypeToken<UserWorkoutSummary>(){}.getType();
+	
+	public static final Type ERROR = new TypeToken<Z5Error>(){}.getType();
+	
+	private Types() {}
 }

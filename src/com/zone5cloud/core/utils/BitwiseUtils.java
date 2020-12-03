@@ -109,4 +109,6 @@ public class BitwiseUtils {
 			mask = 0L;
 		return mask & ~(1L << n);
 	}
+	
+	private BitwiseUtils() {}
 }

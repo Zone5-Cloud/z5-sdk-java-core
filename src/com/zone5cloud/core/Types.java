@@ -26,6 +26,7 @@ import com.zone5cloud.core.users.User;
 import com.zone5cloud.core.users.UserPreferences;
 import com.zone5cloud.core.workouts.UserWorkoutSummary;
 
+@SuppressWarnings("deprecation")
 public class Types {
 
 	public static final Type SEARCH_RESULT_ACTIVITIES = new TypeToken<MappedSearchResult<UserWorkoutResult>>(){}.getType();

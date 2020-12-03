@@ -11,13 +11,16 @@ public class TestAuthToken {
 		OAuthToken token = new OAuthToken();
 		token.setToken("123");
 		assertFalse(token.isExpired());
+		assertNotNull(token.hashCode());
 		
 		token.setRefreshToken("zxc");
 		assertFalse(token.isExpired());
+		assertNotNull(token.hashCode());
 		
 		token.setRefreshToken(null);
 		token.setTokenExp(System.currentTimeMillis());
 		assertTrue(token.isExpired());
+		assertNotNull(token.hashCode());
 		
 		token.setRefreshToken("zxc");
 		assertTrue(token.isExpired());
@@ -38,6 +41,7 @@ public class TestAuthToken {
 		assertEquals("jean+1606784897009@todaysplan.net", token.extractUsername());
 	}
 	
+	@SuppressWarnings({ "deprecation", "unlikely-arg-type" })
 	@Test
 	public void Equality() {
 		String token = "asd";
@@ -53,24 +57,29 @@ public class TestAuthToken {
 		// tokens are the same
 		assertTrue(token1.equals(token2));
 		assertTrue(token2.equals(token1));
+		assertEquals(token1.hashCode(), token2.hashCode());
 		
 		token1.setTokenExp(expiresAt);
 		
 		// expiry is different
 		assertFalse(token1.equals(token2));
 		assertFalse(token2.equals(token1));
+		assertNotEquals(token1.hashCode(), token2.hashCode());
 		
 		token2.setTokenExp(expiresAt);
 		
 		// expiry is the same
 		assertTrue(token1.equals(token2));
 		assertTrue(token2.equals(token1));
+		assertEquals(token1.hashCode(), token2.hashCode());
 		
 		token1.setRefreshToken(refresh);
 		
 		// refresh differs
 		assertFalse(token1.equals(token2));
 		assertFalse(token2.equals(token1));
+		assertNotEquals(token1.hashCode(), token2.hashCode());
+		
 	}
 	
 	@Test

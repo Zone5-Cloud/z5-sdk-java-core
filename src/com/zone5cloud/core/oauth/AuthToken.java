@@ -2,6 +2,7 @@ package com.zone5cloud.core.oauth;
 
 import java.util.Base64;
 import java.util.Map;
+import java.util.Objects;
 
 import com.zone5cloud.core.Types;
 import com.zone5cloud.core.utils.GsonManager;
@@ -84,5 +85,10 @@ public abstract class AuthToken {
 		}
 		
 		return s1.equals(s2);
+	}
+	
+	@Override 
+	public int hashCode() {
+		return Objects.hash(getToken(), getRefreshToken(), getTokenExp());
 	}
 }

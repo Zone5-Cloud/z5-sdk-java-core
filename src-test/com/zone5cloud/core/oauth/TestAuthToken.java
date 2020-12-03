@@ -17,7 +17,7 @@ public class TestAuthToken {
 		
 		token.setRefreshToken(null);
 		token.setTokenExp(System.currentTimeMillis());
-		assertFalse(token.isExpired());
+		assertTrue(token.isExpired());
 		
 		token.setRefreshToken("zxc");
 		assertTrue(token.isExpired());

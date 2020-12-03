@@ -15,11 +15,11 @@ import com.zone5cloud.core.utils.GsonManager;
  */
 public abstract class AuthToken {
 	/** OAuth token */
-	abstract public String getToken();
+	public abstract String getToken();
 	/** Refresh token used to refresh */
-	abstract public String getRefreshToken();
+	public abstract String getRefreshToken();
 	/** Expiry as a unix timestamp in ms */
-	abstract public Long getTokenExp();
+	public abstract Long getTokenExp();
 	
 	/**
 	 * Get the formatted Authorization header value
@@ -31,18 +31,14 @@ public abstract class AuthToken {
 	
 	/** Test whether this token is expired, or about to expire in the next 30 seconds */
 	public boolean isExpired() {
-		if (getTokenExp() != null && getTokenExp() < System.currentTimeMillis() + 30000) {
-			return true;
-		}
-		
-		return false;
+		return getTokenExp() != null && getTokenExp() < System.currentTimeMillis() + 30000;
 	}
 	
 	/** If this token is a Cognito JWT then we can extract the username out of the token */
 	public String extractUsername() {
 		String jwt = getToken();
 		if (jwt != null) {
-			String segments[] = jwt.split("\\.");
+			String[] segments = jwt.split("\\.");
 			if (segments.length > 1) {
 				try {
 					String body = new String(Base64.getDecoder().decode(segments[1]));
@@ -50,7 +46,8 @@ public abstract class AuthToken {
 					return map.get("email");
 				}
 				catch(Exception e) {
-					
+					// no username
+					return null;
 				}
 			}	
 		}
@@ -60,7 +57,7 @@ public abstract class AuthToken {
 	
 	@Override
 	public boolean equals(Object other) {
-		if (other == null || !(other instanceof AuthToken)) {
+		if (!(other instanceof AuthToken)) {
 			return false;
 		}
 		
@@ -77,10 +74,6 @@ public abstract class AuthToken {
 		}
 		
 		if (s1 != null && s2 == null) {
-			return false;
-		}
-		
-		if (s2 != null && s1 == null) {
 			return false;
 		}
 		

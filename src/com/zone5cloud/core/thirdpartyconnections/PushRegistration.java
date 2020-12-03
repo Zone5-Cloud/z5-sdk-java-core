@@ -34,7 +34,7 @@ public class PushRegistration {
 		return deviceId;
 	}
 	
-	public void setDeviceId(String device_id) {
-		this.deviceId = device_id;
+	public void setDeviceId(String id) {
+		this.deviceId = id;
 	}
 }

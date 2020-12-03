@@ -6,7 +6,7 @@ public abstract class AbstractUserThresholdPreference<T extends Number> {
 	
 	private T threshold;
 	
-	public AbstractUserThresholdPreference() { }
+	protected AbstractUserThresholdPreference() { }
 	
 	public Long getTestDate() {
 		return testDate;

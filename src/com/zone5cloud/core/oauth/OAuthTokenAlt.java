@@ -1,5 +1,10 @@
 package com.zone5cloud.core.oauth;
 
+/**
+ * @deprecated - please use OAuthToken
+ * @author jean
+ *
+ */
 @Deprecated
 public class OAuthTokenAlt extends AuthToken {
 	

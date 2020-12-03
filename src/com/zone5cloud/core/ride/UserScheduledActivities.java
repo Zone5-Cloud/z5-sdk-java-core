@@ -16,6 +16,7 @@ public class UserScheduledActivities {
 	
 	public static final String MAP 			= "/rest/users/scheduled/activities/map/{id}";
 
+	private UserScheduledActivities() {}
 }
 
 

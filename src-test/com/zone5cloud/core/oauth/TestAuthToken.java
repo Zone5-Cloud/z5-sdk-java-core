@@ -16,16 +16,13 @@ public class TestAuthToken {
 		OAuthToken token = new OAuthToken();
 		token.setToken("123");
 		assertFalse(token.isExpired());
-		assertNotNull(token.hashCode());
 		
 		token.setRefreshToken("zxc");
 		assertFalse(token.isExpired());
-		assertNotNull(token.hashCode());
 		
 		token.setRefreshToken(null);
 		token.setTokenExp(System.currentTimeMillis());
 		assertTrue(token.isExpired());
-		assertNotNull(token.hashCode());
 		
 		token.setRefreshToken("zxc");
 		assertTrue(token.isExpired());

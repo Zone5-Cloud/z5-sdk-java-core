@@ -73,7 +73,7 @@ public abstract class AuthToken {
 			return true;
 		}
 		
-		if (s1 != null && s2 == null) {
+		if (s1 == null && s2 != null) {
 			return false;
 		}
 		

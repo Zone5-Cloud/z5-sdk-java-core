@@ -43,7 +43,6 @@ public class TestAuthToken {
 		assertEquals("jean+1606784897009@todaysplan.net", token.extractUsername());
 	}
 	
-	@SuppressWarnings({ "deprecation" })
 	@Test
 	public void Equality() {
 		String token = "asd";
@@ -53,7 +52,7 @@ public class TestAuthToken {
 		OAuthToken token1 = new OAuthToken();
 		token1.setToken(token);
 		
-		OAuthTokenAlt token2 = new OAuthTokenAlt();
+		OAuthToken token2 = new OAuthToken();
 		token2.setToken(token);
 		
 		// tokens are the same

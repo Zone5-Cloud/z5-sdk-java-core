@@ -59,4 +59,6 @@ public class Types {
 	public static final Type USER_WORKOUT_SUMMARY = new TypeToken<UserWorkoutSummary>(){}.getType();
 	
 	public static final Type ERROR = new TypeToken<Z5Error>(){}.getType();
+	
+	private Types() {}
 }

@@ -1,6 +1,11 @@
 package com.zone5cloud.core.oauth;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -41,7 +46,7 @@ public class TestAuthToken {
 		assertEquals("jean+1606784897009@todaysplan.net", token.extractUsername());
 	}
 	
-	@SuppressWarnings({ "deprecation", "unlikely-arg-type" })
+	@SuppressWarnings({ "deprecation" })
 	@Test
 	public void Equality() {
 		String token = "asd";
@@ -55,29 +60,29 @@ public class TestAuthToken {
 		token2.setToken(token);
 		
 		// tokens are the same
-		assertTrue(token1.equals(token2));
-		assertTrue(token2.equals(token1));
+		assertEquals(token1, token2);
+		assertEquals(token2, token1);
 		assertEquals(token1.hashCode(), token2.hashCode());
 		
 		token1.setTokenExp(expiresAt);
 		
 		// expiry is different
-		assertFalse(token1.equals(token2));
-		assertFalse(token2.equals(token1));
+		assertNotEquals(token1, token2);
+		assertNotEquals(token2, token1);
 		assertNotEquals(token1.hashCode(), token2.hashCode());
 		
 		token2.setTokenExp(expiresAt);
 		
 		// expiry is the same
-		assertTrue(token1.equals(token2));
-		assertTrue(token2.equals(token1));
+		assertEquals(token1, token2);
+		assertEquals(token2, token1);
 		assertEquals(token1.hashCode(), token2.hashCode());
 		
 		token1.setRefreshToken(refresh);
 		
 		// refresh differs
-		assertFalse(token1.equals(token2));
-		assertFalse(token2.equals(token1));
+		assertNotEquals(token1, token2);
+		assertNotEquals(token2, token1);
 		assertNotEquals(token1.hashCode(), token2.hashCode());
 		
 	}
@@ -87,23 +92,23 @@ public class TestAuthToken {
 		OAuthToken token1 = new OAuthToken();
 		token1.setToken("123");
 		
-		assertFalse(token1.equals(null));
-		assertFalse(token1.equals(new Object()));
+		assertNotEquals(token1, null);
+		assertNotEquals(token1, new Object());
 		
 		token1.setToken(null);
 		
 		OAuthToken token2 = new OAuthToken();
 		
 		// assert the everything null case
-		assertTrue(token1.equals(token2));
-		assertTrue(token2.equals(token1));
+		assertEquals(token1, token2);
+		assertEquals(token2, token1);
 		
 		// assert false no exceptions when one is all nulls
 		token2.setToken("123");
 		token2.setRefreshToken("asd");
 		token2.setTokenExp(77l);
 		
-		assertFalse(token1.equals(token2));
-		assertFalse(token2.equals(token1));
+		assertNotEquals(token1, token2);
+		assertNotEquals(token2, token1);
 	}
 }

@@ -15,6 +15,8 @@ public class Endpoints {
 		auth.put(Users.REGISTER_USER, false);
 	}
 	
+	private Endpoints() {}
+	
 	public static boolean requiresAuth(String path) {
 		// default to true
 		return !auth.containsKey(path) || auth.get(path);

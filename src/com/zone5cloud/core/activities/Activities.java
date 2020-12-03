@@ -123,4 +123,6 @@ public class Activities {
 		
 		return s;
     }
+    
+    private Activities() {}
 }

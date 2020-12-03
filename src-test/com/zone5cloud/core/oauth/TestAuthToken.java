@@ -3,11 +3,13 @@ package com.zone5cloud.core.oauth;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import com.zone5cloud.core.Types;
+import com.zone5cloud.core.utils.GsonManager;
 
 public class TestAuthToken {
 
@@ -106,5 +108,19 @@ public class TestAuthToken {
 		
 		assertNotEquals(token1, token2);
 		assertNotEquals(token2, token1);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testDecode() {
+		OAuthTokenAlt alt = new OAuthTokenAlt();
+		alt.setToken("123");
+		alt.setTokenExp(10l);
+		String json = GsonManager.getInstance().toJson(alt);
+		
+		OAuthToken token = GsonManager.getInstance().fromJson(json, Types.OAUTHTOKEN);
+		
+		assertEquals("123", token.getToken());
+		assertEquals(10l, token.getTokenExp().longValue());
 	}
 }

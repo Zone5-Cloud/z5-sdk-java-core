@@ -51,7 +51,7 @@ public class ThirdPartyToken {
 		return expiresIn;
 	}
 
-	public void setExpires_in(Integer expiresIn) {
+	public void setExpiresIn(Integer expiresIn) {
 		this.expiresIn = expiresIn;
 	}
 	

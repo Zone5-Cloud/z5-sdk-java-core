@@ -24,9 +24,7 @@ public class ClientConfig {
         return token;
     }
 
-    public void setToken(AuthToken token) {
-        this.token = token;
-    }
+    public void setToken(AuthToken token) { this.token = token; }
 
     public String getClientID() {
         return clientID;

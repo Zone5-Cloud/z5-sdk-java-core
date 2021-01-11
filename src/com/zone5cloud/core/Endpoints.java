@@ -2,6 +2,7 @@ package com.zone5cloud.core;
 
 import java.util.HashMap;
 
+import com.zone5cloud.core.users.User;
 import com.zone5cloud.core.users.Users;
 
 public class Endpoints {
@@ -13,6 +14,8 @@ public class Endpoints {
 		auth.put(Users.EMAIL_EXISTS, false);
 		auth.put(Users.EMAIL_STATUS, false);
 		auth.put(Users.REGISTER_USER, false);
+		auth.put(Users.RECONFIRM,false);
+		auth.put(Users.PASSWORD_COMPLEXITY,false);
 	}
 	
 	private Endpoints() {}

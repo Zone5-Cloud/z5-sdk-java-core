@@ -20,9 +20,7 @@ public class ClientConfig {
 
     URL zone5BaseUrl;
 
-    public AuthToken getToken() {
-        return token;
-    }
+    public AuthToken getToken() { return token; }
 
     public void setToken(AuthToken token) { this.token = token; }
 

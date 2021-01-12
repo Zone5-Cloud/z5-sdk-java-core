@@ -7,18 +7,18 @@ import java.net.URL;
 public class ClientConfig {
     // The initial authorization token to be used in the Authorization header for all requests which require it.
     // token may be null and can be set later via setToken(), or automatically set with a login request
-    AuthToken token;
+    private AuthToken token;
 
     // Authentication service API key, Your OAuth app clientId (optional for S-Digital systems)
-    String clientID;
+    private String clientID;
 
     // Authentication service API secret, Cognito only. Set to null for Gigya keys.Your OAuth app secret (not needed for S-Digital systems)
-    String clientSecret;
+    private String clientSecret;
 
     // Users email address
-    String userName;
+    private String userName;
 
-    URL zone5BaseUrl;
+    private URL zone5BaseUrl;
 
     public AuthToken getToken() { return token; }
 

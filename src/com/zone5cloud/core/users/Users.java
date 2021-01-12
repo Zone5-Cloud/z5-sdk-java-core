@@ -26,8 +26,7 @@ public class Users {
 	public static final String PASSWORD_RESET = "/rest/auth/reset";
 	public static final String CHANGE_PASSWORD_SPECIALIZED = "/rest/auth/set/password"; 
 	public static final String REFRESH_TOKEN = "/rest/auth/refresh";
-	
-	
+
 	// Calls related to storing, retrieving and removing 3rd party OAuth connections
 	public static final String SET_THIRD_PARTY_CONNECTION = "/rest/users/connections/api/v1/live_activities/set_third_party_token";
 	public static final String HAS_THIRD_PARTY_CONNECTION = "/rest/users/connections/api/v1/live_activities/has_third_party_token";
@@ -35,5 +34,8 @@ public class Users {
 	public static final String REGISTER_DEVICE_THIRD_PARTY_CONNECTION = "/rest/users/scheduled/activities/api/v1/push_registrations";
 	public static final String DEREGISTER_DEVICE_THIRD_PARTY_CONNECTION = "/rest/users/scheduled/activities/api/v1/push_registrations/{token}";
 	public static final String GET_DEPRECATED = "/rest/users/scheduled/activities/api/v1/deprecated";
+
+	public static final String PASSWORD_COMPLEXITY = "/rest/auth/password-complexity";
+	public static final String RECONFIRM = "/rest/auth/reconfirm";
 
 }

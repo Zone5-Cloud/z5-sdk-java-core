@@ -2,7 +2,6 @@ package com.zone5cloud.core;
 
 import java.util.HashMap;
 
-import com.zone5cloud.core.users.User;
 import com.zone5cloud.core.users.Users;
 
 public class Endpoints {

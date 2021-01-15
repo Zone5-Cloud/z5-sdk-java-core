@@ -5,7 +5,9 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.zone5cloud.core.enums.ActivityType;
+import com.zone5cloud.core.enums.Country;
 import com.zone5cloud.core.enums.UnitMeasurement;
+import com.zone5cloud.core.enums.UserDelegateRelationship;
 
 /** Data structure for registering a new user */
 public class RegisterUser {
@@ -23,7 +25,7 @@ public class RegisterUser {
 	private String tn;
 	
 	/** Optional - date of birth - UTC timestamp */
-	private Long dob;
+	private Z5DateTime dob;
 	
 	/** Optional - A Java Locale ID */
 	private String locale;
@@ -63,6 +65,11 @@ public class RegisterUser {
 	
 	/** Optional - Custom registration directives */
 	private Map<String, String> params;
+
+	private Country country;
+	private String analytics12m;
+	private UserDelegateRelationship role;
+	private Gender gender;
 	
 	public RegisterUser() {
 		this.locale = Locale.getDefault().toString();
@@ -217,12 +224,8 @@ public class RegisterUser {
 	public void setParams(Map<String, String> params) {
 		this.params = params;
 	}
-	
-	public Long getDob() {
-		return dob;
-	}
-	
-	public void setDob(Long dob) {
-		this.dob = dob;
-	}
+
+	public Z5DateTime getDob() { return dob; }
+
+	public void setDob(Z5DateTime dob) { this.dob = dob; }
 }

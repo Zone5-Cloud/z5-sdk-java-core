@@ -1,8 +1,9 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.BatteryStatus;
 
-public class UserWorkoutResultGears {
+public class UserWorkoutResultGears extends SearchableDataObject {
 	
 	/** Minimum battery voltage reported */
 	private Double minBattery;

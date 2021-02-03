@@ -1,6 +1,8 @@
 package com.zone5cloud.core.activities;
 
-public class UserWorkoutResultBike {
+import com.zone5cloud.core.SearchableDataObject;
+
+public class UserWorkoutResultBike extends SearchableDataObject {
 	
 	/** Display name for the bike */
 	private String name;

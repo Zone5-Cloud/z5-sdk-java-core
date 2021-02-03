@@ -3,6 +3,7 @@ package com.zone5cloud.core.activities;
 import java.util.List;
 import java.util.Map;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.ActivityResultType;
 import com.zone5cloud.core.enums.ActivityType;
 import com.zone5cloud.core.enums.DataAccessRequest;
@@ -28,7 +29,7 @@ import com.zone5cloud.core.users.User;
  * @author andrewhall
  *
  */
-public class UserWorkoutResult {
+public class UserWorkoutResult extends SearchableDataObject {
 
 	/** UserWorkoutResult.id */
 	private Long id;
@@ -620,6 +621,7 @@ public class UserWorkoutResult {
 	private UserWorkoutResultByHour hour;
 	
 	private UserWorkoutResultTurbo turbo;
+	private UserWorkoutResultTurboExt turboExt;
 	private UserWorkoutResultBike bike;
 	private UserWorkoutResultGears gears;
 	
@@ -666,6 +668,14 @@ public class UserWorkoutResult {
 	
 	public void setTurbo(UserWorkoutResultTurbo turbo) {
 		this.turbo = turbo;
+	}
+
+	public UserWorkoutResultTurboExt getTurboExt() {
+		return turboExt;
+	}
+	
+	public void setTurboExt(UserWorkoutResultTurboExt turboExt) {
+		this.turboExt = turboExt;
 	}
 
 	public Long getId() {

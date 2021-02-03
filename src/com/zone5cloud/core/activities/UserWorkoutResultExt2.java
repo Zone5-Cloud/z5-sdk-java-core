@@ -1,6 +1,8 @@
 package com.zone5cloud.core.activities;
 
-public class UserWorkoutResultExt2 {
+import com.zone5cloud.core.SearchableDataObject;
+
+public class UserWorkoutResultExt2 extends SearchableDataObject {
 	/** Respiration - breaths/minute */
 	private Short avgResp; 
 	

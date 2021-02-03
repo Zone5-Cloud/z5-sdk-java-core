@@ -1,7 +1,9 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
+
 /** Peak leg spring stiffness */
-public class UserWorkoutResultPeakLss {
+public class UserWorkoutResultPeakLss extends SearchableDataObject {
 	
 	private Float peak3secLss;
 	private Float peak4secLss;

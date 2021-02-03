@@ -2,7 +2,9 @@ package com.zone5cloud.core.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -19,9 +21,20 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
 public class GsonManager {
+	private static class Pair<L,R> {
+		private final L l;
+		private final R r;
+		
+		public Pair(L l, R r) {
+			this.l = l;
+			this.r = r;
+		}
+	}
 	
-	private static final Gson SINGLETON;
-	private static final Gson SINGLETON_PRETTY;
+	private static List<Pair<Class<?>,Object>> ADHOC_REGISTERED = new ArrayList<>();
+	
+	private static Gson SINGLETON;
+	private static Gson SINGLETON_PRETTY;
 	
 	public static GsonBuilder decorate(GsonBuilder b) {
 		b.setLenient();
@@ -46,6 +59,25 @@ public class GsonManager {
 	    b = decorate(b);
 	    b.setPrettyPrinting();
 	    SINGLETON_PRETTY = b.create();
+	}
+	
+	public static void registerTypeAdapter(Class<?> cls, Object adapter) {
+		
+		ADHOC_REGISTERED.add(new Pair<>(cls, adapter));
+		
+		GsonBuilder b = new GsonBuilder();
+		b = decorate(b);
+		for(Pair<Class<?>,Object> p : ADHOC_REGISTERED)
+			b.registerTypeAdapter(p.l, p.r);
+		SINGLETON = b.create();
+		 
+		b = new GsonBuilder();
+		b.setPrettyPrinting();
+		b = decorate(b);
+		for(Pair<Class<?>,Object> p : ADHOC_REGISTERED)
+			b.registerTypeAdapter(p.l, p.r);
+		
+		SINGLETON_PRETTY = b.create();
 	}
 	
 	public static Gson getInstance(boolean pretty) {

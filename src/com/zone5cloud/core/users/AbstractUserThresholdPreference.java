@@ -1,6 +1,8 @@
 package com.zone5cloud.core.users;
 
-public abstract class AbstractUserThresholdPreference<T extends Number> {
+import com.zone5cloud.core.SearchableDataObject;
+
+public abstract class AbstractUserThresholdPreference<T extends Number> extends SearchableDataObject {
 	
 	private Long testDate;
 	

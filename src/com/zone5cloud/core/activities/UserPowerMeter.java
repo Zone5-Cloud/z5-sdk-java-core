@@ -1,9 +1,10 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.Equipment;
 import com.zone5cloud.core.users.User;
 
-public class UserPowerMeter {
+public class UserPowerMeter extends SearchableDataObject {
 	
 	private Long id;
 	

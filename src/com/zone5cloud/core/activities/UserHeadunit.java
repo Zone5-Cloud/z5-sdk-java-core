@@ -1,8 +1,9 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.users.User;
 
-public class UserHeadunit {
+public class UserHeadunit extends SearchableDataObject {
 	
 	private String name;
 	

@@ -2,10 +2,11 @@ package com.zone5cloud.core.activities;
 
 import java.util.List;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.IntensityZoneType;
 import com.zone5cloud.core.users.User;
 
-public class UserIntensityZone {
+public class UserIntensityZone extends SearchableDataObject {
 	
 	private Long id;
 	

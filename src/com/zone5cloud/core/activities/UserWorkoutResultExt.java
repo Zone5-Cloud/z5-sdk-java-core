@@ -1,12 +1,13 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.RunType;
 import com.zone5cloud.core.enums.SwimType;
 import com.zone5cloud.core.enums.UnitMeasurement;
 
 
 /** Extended result set */
-public class UserWorkoutResultExt {
+public class UserWorkoutResultExt extends SearchableDataObject {
 	
 	private Double aerobicDec;
 	

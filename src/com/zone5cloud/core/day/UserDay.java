@@ -2,10 +2,11 @@ package com.zone5cloud.core.day;
 
 import java.util.List;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.TcmAbilities;
 import com.zone5cloud.core.users.User;
 
-public class UserDay {
+public class UserDay extends SearchableDataObject {
 	
 	// a flag used to indicate if we should reprocess data files with a weight change - see UserDayFlags.java
 	private Long flags;

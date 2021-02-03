@@ -1,8 +1,9 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.MappedFieldType;
 
-public class UserWorkoutResultChannel {
+public class UserWorkoutResultChannel extends SearchableDataObject {
 	
 	/** A nice field display name */
 	private String name;

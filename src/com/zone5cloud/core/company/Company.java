@@ -1,6 +1,8 @@
 package com.zone5cloud.core.company;
 
-public class Company {
+import com.zone5cloud.core.SearchableDataObject;
+
+public class Company extends SearchableDataObject {
 
 	private Long id;
 	

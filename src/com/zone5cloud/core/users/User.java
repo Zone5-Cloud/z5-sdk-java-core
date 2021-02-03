@@ -2,7 +2,9 @@ package com.zone5cloud.core.users;
 
 import java.util.Map;
 
-public class User {
+import com.zone5cloud.core.SearchableDataObject;
+
+public class User extends SearchableDataObject {
 	
 	/** Unique user id (within Z5/TP database) */
 	private Long id;

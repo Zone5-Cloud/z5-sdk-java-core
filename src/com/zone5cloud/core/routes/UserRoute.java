@@ -2,6 +2,7 @@ package com.zone5cloud.core.routes;
 
 import java.util.Set;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.ActivityType;
 import com.zone5cloud.core.enums.DataAccessRequest;
 import com.zone5cloud.core.enums.Equipment;
@@ -10,7 +11,7 @@ import com.zone5cloud.core.enums.Terrain;
 import com.zone5cloud.core.enums.UnitMeasurement;
 import com.zone5cloud.core.users.User;
 
-public class UserRoute {
+public class UserRoute extends SearchableDataObject {
 
 	/** The unique database id for this route. Also know as a routeId */
 	private Long id;

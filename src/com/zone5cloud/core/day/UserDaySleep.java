@@ -1,8 +1,9 @@
 package com.zone5cloud.core.day;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.users.User;
 
-public class UserDaySleep {
+public class UserDaySleep extends SearchableDataObject {
 	
 	private Long id;
 	

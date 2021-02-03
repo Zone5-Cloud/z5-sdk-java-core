@@ -1,7 +1,9 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
+
 /** Altitude adjusted power */
-public class UserWorkoutResultAlt {
+public class UserWorkoutResultAlt extends SearchableDataObject {
 	
 	private Integer avgWatts;
 	private Integer maxWatts;

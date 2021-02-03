@@ -620,6 +620,7 @@ public class UserWorkoutResult {
 	private UserWorkoutResultByHour hour;
 	
 	private UserWorkoutResultTurbo turbo;
+	private UserWorkoutResultTurboExt turboExt;
 	private UserWorkoutResultBike bike;
 	private UserWorkoutResultGears gears;
 	
@@ -666,6 +667,14 @@ public class UserWorkoutResult {
 	
 	public void setTurbo(UserWorkoutResultTurbo turbo) {
 		this.turbo = turbo;
+	}
+
+	public UserWorkoutResultTurboExt getTurboExt() {
+		return turboExt;
+	}
+	
+	public void setTurboExt(UserWorkoutResultTurboExt turboExt) {
+		this.turboExt = turboExt;
 	}
 
 	public Long getId() {

@@ -3,6 +3,7 @@ package com.zone5cloud.core.activities;
 import java.util.List;
 import java.util.Map;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.ActivityResultType;
 import com.zone5cloud.core.enums.ActivityType;
 import com.zone5cloud.core.enums.DataAccessRequest;
@@ -28,7 +29,7 @@ import com.zone5cloud.core.users.User;
  * @author andrewhall
  *
  */
-public class UserWorkoutResult {
+public class UserWorkoutResult extends SearchableDataObject {
 
 	/** UserWorkoutResult.id */
 	private Long id;

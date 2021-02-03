@@ -2,6 +2,7 @@ package com.zone5cloud.core.ride;
 
 import java.util.Set;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.company.Company;
 import com.zone5cloud.core.enums.ActivityType;
 import com.zone5cloud.core.enums.Country;
@@ -10,7 +11,7 @@ import com.zone5cloud.core.enums.Equipment;
 import com.zone5cloud.core.routes.UserRoute;
 import com.zone5cloud.core.users.User;
 
-public class UserScheduledActivity {
+public class UserScheduledActivity extends SearchableDataObject {
 		
 	private Long id;
 	

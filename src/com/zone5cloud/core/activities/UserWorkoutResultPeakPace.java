@@ -1,7 +1,9 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
+
 /** Peak pace */
-public class UserWorkoutResultPeakPace {
+public class UserWorkoutResultPeakPace extends SearchableDataObject {
 	
 	private Integer peak3secPace;
 	private Integer peak4secPace;

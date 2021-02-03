@@ -1,6 +1,8 @@
 package com.zone5cloud.core.activities;
 
-public class UserWorkoutResultTurboExt {
+import com.zone5cloud.core.SearchableDataObject;
+
+public class UserWorkoutResultTurboExt extends SearchableDataObject {
 	private Integer minBattery1Temperature; // celsius
 	private Integer avgBattery1Temperature; // celsius
 	private Integer maxBattery1Temperature; // celsius

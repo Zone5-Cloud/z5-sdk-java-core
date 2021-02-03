@@ -1,6 +1,8 @@
 package com.zone5cloud.core.activities;
 
-public class UserIntensityZoneRange {
+import com.zone5cloud.core.SearchableDataObject;
+
+public class UserIntensityZoneRange extends SearchableDataObject {
 	
 	/** For zones which are relative to a percentage (ie % threshold), this is the min % for the range. For non relative zones (wkg, nm) this is an absolute value */
 	private Double min;

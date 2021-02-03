@@ -2,6 +2,9 @@ package com.zone5cloud.core.activities;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.Test;
 
@@ -74,4 +77,63 @@ public class TestUserWorkoutResultTurboExt {
 		assertEquals(28.0, result.getTurboExt().getSupportFactorAssist4(), 0.1);
 	}
 
+	@Test
+	public void testSelectFields() {
+		List<String> fields = new UserWorkoutResult().getFieldNames();
+		List<String> fieldsTurbo = new UserWorkoutResultTurbo().getFieldNames("turbo");
+		
+		assertTrue(fields.contains("id"));
+		assertTrue(fields.contains("avgWatts"));
+		
+		assertTrue(fieldsTurbo.contains("turbo.product"));
+		assertTrue(fieldsTurbo.contains("turbo.avgMotorPower"));
+		assertTrue(fieldsTurbo.contains("turbo.maxMotorPower"));
+		assertTrue(fieldsTurbo.contains("turbo.minMotorTemp"));
+		assertTrue(fieldsTurbo.contains("turbo.avgMotorTemp"));
+		assertTrue(fieldsTurbo.contains("turbo.maxMotorTemp"));
+		assertTrue(fieldsTurbo.contains("turbo.minBattery1"));
+		assertTrue(fieldsTurbo.contains("turbo.avgBattery1"));
+		assertTrue(fieldsTurbo.contains("turbo.maxBattery1"));
+		assertTrue(fieldsTurbo.contains("turbo.minBattery2"));
+		assertTrue(fieldsTurbo.contains("turbo.avgBattery2"));
+		assertTrue(fieldsTurbo.contains("turbo.maxBattery2"));
+		assertTrue(fieldsTurbo.contains("turbo.minProfileScale"));
+		assertTrue(fieldsTurbo.contains("turbo.avgProfileScale"));
+		assertTrue(fieldsTurbo.contains("turbo.maxProfileScale"));
+		assertTrue(fieldsTurbo.contains("turbo.minCurrentScale"));
+		assertTrue(fieldsTurbo.contains("turbo.avgCurrentScale"));
+		assertTrue(fieldsTurbo.contains("turbo.maxCurrentScale"));
+		assertTrue(fieldsTurbo.contains("turbo.avgSupportFactor"));
+		assertTrue(fieldsTurbo.contains("turbo.maxSupportFactor"));
+		
+		List<String> fieldsTurboExt = new UserWorkoutResultTurboExt().getFieldNames("turboExt");
+		assertTrue(fieldsTurboExt.contains("turboExt.minBattery1Temperature")); // celsius
+		assertTrue(fieldsTurboExt.contains("turboExt.avgBattery1Temperature")); // celsius
+		assertTrue(fieldsTurboExt.contains("turboExt.maxBattery1Temperature")); // celsius
+		assertTrue(fieldsTurboExt.contains("turboExt.minBattery2Temperature")); // celsius
+		assertTrue(fieldsTurboExt.contains("turboExt.avgBattery2Temperature")); // celsius
+		assertTrue(fieldsTurboExt.contains("turboExt.maxBattery2Temperature")); // celsius
+		assertTrue(fieldsTurboExt.contains("turboExt.battery1DecayP")); // %
+		assertTrue(fieldsTurboExt.contains("turboExt.battery2DecayP")); // %
+		assertTrue(fieldsTurboExt.contains("turboExt.battery1DecayWh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.battery2DecayWh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.batteryTotalDecayP")); // %
+		assertTrue(fieldsTurboExt.contains("turboExt.batteryTotalDecayWh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat1DecayAssist0Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat1DecayAssist1Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat1DecayAssist2Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat1DecayAssist3Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat1DecayAssist4Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat2DecayAssist0Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat2DecayAssist1Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat2DecayAssist2Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat2DecayAssist3Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.bat2DecayAssist4Wh")); // Watt hours
+		assertTrue(fieldsTurboExt.contains("turboExt.supportFactorAssist0")); // ratio
+		assertTrue(fieldsTurboExt.contains("turboExt.supportFactorAssist1")); // ratio
+		assertTrue(fieldsTurboExt.contains("turboExt.supportFactorAssist2")); // ratio
+		assertTrue(fieldsTurboExt.contains("turboExt.supportFactorAssist3")); // ratio
+		assertTrue(fieldsTurboExt.contains("turboExt.supportFactorAssist4")); // ratio
+		assertTrue(fieldsTurboExt.contains("turboExt.avgGPSSpeed"));
+	}
 }

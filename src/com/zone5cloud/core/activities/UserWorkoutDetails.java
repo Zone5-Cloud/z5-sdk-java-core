@@ -2,6 +2,7 @@ package com.zone5cloud.core.activities;
 
 import java.util.Set;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.enums.ActivityType;
 import com.zone5cloud.core.enums.Equipment;
 import com.zone5cloud.core.enums.Terrain;
@@ -11,7 +12,7 @@ import com.zone5cloud.core.enums.UserWorkoutState;
 import com.zone5cloud.core.enums.WorkoutType;
 import com.zone5cloud.core.users.User;
 
-public class UserWorkoutDetails {
+public class UserWorkoutDetails extends SearchableDataObject {
 
 	/** A workout ID */
 	private Long id;

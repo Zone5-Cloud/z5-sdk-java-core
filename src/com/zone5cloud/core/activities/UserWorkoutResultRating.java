@@ -1,9 +1,10 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
 import com.zone5cloud.core.users.User;
 
 /** Rating of a prescribed workout */
-public class UserWorkoutResultRating {
+public class UserWorkoutResultRating extends SearchableDataObject {
 
 	private User user;
 	

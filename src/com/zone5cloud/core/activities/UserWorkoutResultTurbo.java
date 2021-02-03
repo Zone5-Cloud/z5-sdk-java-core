@@ -1,6 +1,8 @@
 package com.zone5cloud.core.activities;
 
-public class UserWorkoutResultTurbo {
+import com.zone5cloud.core.SearchableDataObject;
+
+public class UserWorkoutResultTurbo extends SearchableDataObject {
 	
 	private String product; // ie file_id.product_name --> SPECIALIZED_WSBC601160149N
 	

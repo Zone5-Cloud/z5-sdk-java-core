@@ -1,7 +1,9 @@
 package com.zone5cloud.core.activities;
 
+import com.zone5cloud.core.SearchableDataObject;
+
 /** By hour averages averages */
-public class UserWorkoutResultByHour {
+public class UserWorkoutResultByHour extends SearchableDataObject {
 	
 	/** Average watts in hour 1 */
 	private Integer avgW1;

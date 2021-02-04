@@ -23,4 +23,6 @@ jobs:
     - name: Sonar Scan
       env:
         SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
-      run: mvn verify sonar:sonar -Pcicd -Dsonarlogin=${SONAR_LOGIN}
+      run: 
+        echo "<settings><servers><server><id>github</id><username>${USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+        mvn verify sonar:sonar -Pcicd -Dsonarlogin=${SONAR_LOGIN}

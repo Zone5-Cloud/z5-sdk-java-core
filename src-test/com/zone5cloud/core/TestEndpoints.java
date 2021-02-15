@@ -21,7 +21,9 @@ public class TestEndpoints {
 		assertFalse(Endpoints.requiresAuth(Users.PASSWORD_RESET));
 		assertFalse(Endpoints.requiresAuth(Users.EMAIL_EXISTS));
 		assertFalse(Endpoints.requiresAuth(Users.EMAIL_STATUS));
-		assertFalse(Endpoints.requiresAuth(Users.REGISTER_USER));
+		
+		// SJ-23 Register can OPTIONALLY include auth bearer token header
+		assertTrue(Endpoints.requiresAuth(Users.REGISTER_USER));
 	}
 
 }

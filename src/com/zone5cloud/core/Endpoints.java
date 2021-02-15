@@ -12,7 +12,7 @@ public class Endpoints {
 		auth.put(Users.PASSWORD_RESET, false);
 		auth.put(Users.EMAIL_EXISTS, false);
 		auth.put(Users.EMAIL_STATUS, false);
-		auth.put(Users.REGISTER_USER, false);
+		auth.put(Users.REGISTER_USER, true); // SJ-23 register CAN OPTIONALLY add auth
 		auth.put(Users.RECONFIRM,false);
 		auth.put(Users.PASSWORD_COMPLEXITY,false);
 	}

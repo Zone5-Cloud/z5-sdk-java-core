@@ -6,6 +6,8 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	
 	private String product; // ie file_id.product_name --> SPECIALIZED_WSBC601160149N
 	
+	private Integer numAssistChanges;
+	
 	private Integer avgMotorPower;
 	private Integer maxMotorPower;
 	
@@ -20,6 +22,14 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	private Integer minBattery2;
 	private Integer avgBattery2;
 	private Integer maxBattery2;
+
+	private Integer minBatteryWh1;
+	private Integer avgBatteryWh1;
+	private Integer maxBatteryWh1;
+	
+	private Integer minBatteryWh2;
+	private Integer avgBatteryWh2;
+	private Integer maxBatteryWh2;
 	
 	private Integer minProfileScale;
 	private Integer avgProfileScale;
@@ -31,6 +41,31 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	
 	private Double avgSupportFactor;
 	private Double maxSupportFactor;
+	
+	private Integer minAssist;
+	private Integer avgAssist;
+	private Integer maxAssist;
+	
+	// Percentage time in this mode
+	private Double timeInAssist0P;
+	private Double timeInAssist1P;
+	private Double timeInAssist2P;
+	private Double timeInAssist3P;
+	private Double timeInAssist4P;
+	
+	// Cumulative % decay per assist mode
+	private Integer bat1DecayAssist0P;
+	private Integer bat1DecayAssist1P;
+	private Integer bat1DecayAssist2P;
+	private Integer bat1DecayAssist3P;
+	private Integer bat1DecayAssist4P;
+	
+	// Cumulative % decay per assist mode
+	private Integer bat2DecayAssist0P;
+	private Integer bat2DecayAssist1P;
+	private Integer bat2DecayAssist2P;
+	private Integer bat2DecayAssist3P;
+	private Integer bat2DecayAssist4P;
 	
 	public UserWorkoutResultTurbo() { }
 
@@ -192,5 +227,205 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 
 	public void setMaxSupportFactor(Double maxSupportFactor) {
 		this.maxSupportFactor = maxSupportFactor;
+	}
+
+	public Integer getNumAssistChanges() {
+		return numAssistChanges;
+	}
+
+	public void setNumAssistChanges(Integer numAssistChanges) {
+		this.numAssistChanges = numAssistChanges;
+	}
+
+	public Integer getMinBatteryWh1() {
+		return minBatteryWh1;
+	}
+
+	public void setMinBatteryWh1(Integer minBatteryWh1) {
+		this.minBatteryWh1 = minBatteryWh1;
+	}
+
+	public Integer getAvgBatteryWh1() {
+		return avgBatteryWh1;
+	}
+
+	public void setAvgBatteryWh1(Integer avgBatteryWh1) {
+		this.avgBatteryWh1 = avgBatteryWh1;
+	}
+
+	public Integer getMaxBatteryWh1() {
+		return maxBatteryWh1;
+	}
+
+	public void setMaxBatteryWh1(Integer maxBatteryWh1) {
+		this.maxBatteryWh1 = maxBatteryWh1;
+	}
+
+	public Integer getMinBatteryWh2() {
+		return minBatteryWh2;
+	}
+
+	public void setMinBatteryWh2(Integer minBatteryWh2) {
+		this.minBatteryWh2 = minBatteryWh2;
+	}
+
+	public Integer getAvgBatteryWh2() {
+		return avgBatteryWh2;
+	}
+
+	public void setAvgBatteryWh2(Integer avgBatteryWh2) {
+		this.avgBatteryWh2 = avgBatteryWh2;
+	}
+
+	public Integer getMaxBatteryWh2() {
+		return maxBatteryWh2;
+	}
+
+	public void setMaxBatteryWh2(Integer maxBatteryWh2) {
+		this.maxBatteryWh2 = maxBatteryWh2;
+	}
+
+	public Integer getMinAssist() {
+		return minAssist;
+	}
+
+	public void setMinAssist(Integer minAssist) {
+		this.minAssist = minAssist;
+	}
+
+	public Integer getAvgAssist() {
+		return avgAssist;
+	}
+
+	public void setAvgAssist(Integer avgAssist) {
+		this.avgAssist = avgAssist;
+	}
+
+	public Integer getMaxAssist() {
+		return maxAssist;
+	}
+
+	public void setMaxAssist(Integer maxAssist) {
+		this.maxAssist = maxAssist;
+	}
+
+	public Double getTimeInAssist0P() {
+		return timeInAssist0P;
+	}
+
+	public void setTimeInAssist0P(Double timeInAssist0P) {
+		this.timeInAssist0P = timeInAssist0P;
+	}
+
+	public Double getTimeInAssist1P() {
+		return timeInAssist1P;
+	}
+
+	public void setTimeInAssist1P(Double timeInAssist1P) {
+		this.timeInAssist1P = timeInAssist1P;
+	}
+
+	public Double getTimeInAssist2P() {
+		return timeInAssist2P;
+	}
+
+	public void setTimeInAssist2P(Double timeInAssist2P) {
+		this.timeInAssist2P = timeInAssist2P;
+	}
+
+	public Double getTimeInAssist3P() {
+		return timeInAssist3P;
+	}
+
+	public void setTimeInAssist3P(Double timeInAssist3P) {
+		this.timeInAssist3P = timeInAssist3P;
+	}
+
+	public Double getTimeInAssist4P() {
+		return timeInAssist4P;
+	}
+
+	public void setTimeInAssist4P(Double timeInAssist4P) {
+		this.timeInAssist4P = timeInAssist4P;
+	}
+
+	public Integer getBat1DecayAssist0P() {
+		return bat1DecayAssist0P;
+	}
+
+	public void setBat1DecayAssist0P(Integer bat1DecayAssist0P) {
+		this.bat1DecayAssist0P = bat1DecayAssist0P;
+	}
+
+	public Integer getBat1DecayAssist1P() {
+		return bat1DecayAssist1P;
+	}
+
+	public void setBat1DecayAssist1P(Integer bat1DecayAssist1P) {
+		this.bat1DecayAssist1P = bat1DecayAssist1P;
+	}
+
+	public Integer getBat1DecayAssist2P() {
+		return bat1DecayAssist2P;
+	}
+
+	public void setBat1DecayAssist2P(Integer bat1DecayAssist2P) {
+		this.bat1DecayAssist2P = bat1DecayAssist2P;
+	}
+
+	public Integer getBat1DecayAssist3P() {
+		return bat1DecayAssist3P;
+	}
+
+	public void setBat1DecayAssist3P(Integer bat1DecayAssist3P) {
+		this.bat1DecayAssist3P = bat1DecayAssist3P;
+	}
+
+	public Integer getBat1DecayAssist4P() {
+		return bat1DecayAssist4P;
+	}
+
+	public void setBat1DecayAssist4P(Integer bat1DecayAssist4P) {
+		this.bat1DecayAssist4P = bat1DecayAssist4P;
+	}
+
+	public Integer getBat2DecayAssist0P() {
+		return bat2DecayAssist0P;
+	}
+
+	public void setBat2DecayAssist0P(Integer bat2DecayAssist0P) {
+		this.bat2DecayAssist0P = bat2DecayAssist0P;
+	}
+
+	public Integer getBat2DecayAssist1P() {
+		return bat2DecayAssist1P;
+	}
+
+	public void setBat2DecayAssist1P(Integer bat2DecayAssist1P) {
+		this.bat2DecayAssist1P = bat2DecayAssist1P;
+	}
+
+	public Integer getBat2DecayAssist2P() {
+		return bat2DecayAssist2P;
+	}
+
+	public void setBat2DecayAssist2P(Integer bat2DecayAssist2P) {
+		this.bat2DecayAssist2P = bat2DecayAssist2P;
+	}
+
+	public Integer getBat2DecayAssist3P() {
+		return bat2DecayAssist3P;
+	}
+
+	public void setBat2DecayAssist3P(Integer bat2DecayAssist3P) {
+		this.bat2DecayAssist3P = bat2DecayAssist3P;
+	}
+
+	public Integer getBat2DecayAssist4P() {
+		return bat2DecayAssist4P;
+	}
+
+	public void setBat2DecayAssist4P(Integer bat2DecayAssist4P) {
+		this.bat2DecayAssist4P = bat2DecayAssist4P;
 	}
 }

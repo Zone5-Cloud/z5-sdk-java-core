@@ -3,7 +3,6 @@ package com.zone5cloud.core.oauth;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -31,18 +30,6 @@ public class TestAuthToken {
 		
 		token.setTokenExp(System.currentTimeMillis() + 60000);
 		assertFalse(token.isExpired());
-	}
-
-	@Test
-	public void testUsername() {
-		OAuthToken token = new OAuthToken();
-		token.setToken("123");
-		assertNull(token.extractUsername());
-		token.setToken("123.345");
-		assertNull(token.extractUsername());
-		
-		token.setToken("bogustext.eyJzdWIiOiI5MGRmMmIxYi0xYzE2LTQyNzAtODE0YS0xMGY4NjE3ZjY3ZTYiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl9ieE4xRTRQbmwiLCJjb2duaXRvOnVzZXJuYW1lIjoiOTBkZjJiMWItMWMxNi00MjcwLTgxNGEtMTBmODYxN2Y2N2U2IiwiZ2l2ZW5fbmFtZSI6IkplYW4iLCJsb2NhbGUiOiJlbl9BVSIsImF1ZCI6IjFlcjMyMjdzMW1pYTNwa3FybmdudGw0c3Y2IiwiZXZlbnRfaWQiOiI3ZmIyNDc0My03ZjM0LTQzMGMtYjlhMi0xY2NlZGM2Yzg4OGEiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYwNjc4NDk1NSwiZXhwIjoxNjA2Nzg4NTU1LCJpYXQiOjE2MDY3ODQ5NTUsImZhbWlseV9uYW1lIjoiSGFsbCIsImVtYWlsIjoiamVhbisxNjA2Nzg0ODk3MDA5QHRvZGF5c3BsYW4ubmV0In0.bogustext");
-		assertEquals("jean+1606784897009@todaysplan.net", token.extractUsername());
 	}
 	
 	@Test

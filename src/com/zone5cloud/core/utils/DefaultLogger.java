@@ -41,8 +41,12 @@ public class DefaultLogger implements ILogger {
 
     @Override
     public void e(String tag, String message, Exception exception) {
-    	writeLog(tag, Severity.ERROR, message);
-    	exception.printStackTrace();
+    	if (exception != null) {
+	    	writeLog(tag, Severity.ERROR, message + ". " + exception.getClass().getSimpleName() + ": " + exception.getMessage());
+	    	exception.printStackTrace();
+    	} else {
+    		e(tag, message);
+    	}
     }
 
 	@Override

@@ -8,4 +8,7 @@ public interface ILogger {
     public void w(String tag, String message);
     public void e(String tag, String message);
     public void e(String tag, String message, Exception exception);
+    
+    public void httpError(String tag, String url, int statusCode, String message);
+    public void refreshError(String tag, String url, int statusCode, String message);
 }

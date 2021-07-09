@@ -4,24 +4,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class ConnectionsResponse {
 
-	@SerializedName("app")
-	private ConectionApp app;
+    @SerializedName("app")
+    private ConnectionApp app;
 
-	@SerializedName("type")
-	private String type;
+    @SerializedName("type")
+    private String type;
 
-	@SerializedName("enabled")
-	private boolean enabled;
+    @SerializedName("enabled")
+    private boolean enabled;
 
-	public ConectionApp getApp(){
-		return app;
-	}
+    public ConnectionApp getApp() {
+        return app;
+    }
 
-	public String getType(){
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public boolean isEnabled(){
-		return enabled;
-	}
+    public boolean isEnabled() {
+        return enabled;
+    }
 }

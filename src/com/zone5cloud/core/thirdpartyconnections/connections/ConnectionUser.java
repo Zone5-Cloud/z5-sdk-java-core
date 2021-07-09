@@ -4,24 +4,38 @@ import com.google.gson.annotations.SerializedName;
 
 public class ConnectionUser {
 
-	@SerializedName("firstname")
-	private String firstname;
+    @SerializedName("id")
+    private long id;
 
-	@SerializedName("lastname")
-	private String lastname;
+    @SerializedName("firstname")
+    private String firstname;
 
-	@SerializedName("email")
-	private String email;
+    @SerializedName("lastname")
+    private String lastname;
 
-	public String getFirstname(){
-		return firstname;
-	}
+    @SerializedName("email")
+    private String email;
 
-	public String getLastname(){
-		return lastname;
-	}
+    @SerializedName("isPremium")
+    private boolean isPremium;
 
-	public String getEmail(){
-		return email;
-	}
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public boolean isPremium() {
+        return isPremium;
+    }
 }

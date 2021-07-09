@@ -10,8 +10,4 @@ public class ConnectionInitResponse {
     public String getConfirmationUrl() {
         return confirmationUrl;
     }
-
-    public void setConfirmationUrl(String confirmationUrl) {
-        this.confirmationUrl = confirmationUrl;
-    }
 }

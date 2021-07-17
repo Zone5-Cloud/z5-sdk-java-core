@@ -100,5 +100,8 @@ public enum Roles {
 	bahrain,
 	
 	/** has access to curation tools */
-	curation;
+	curation,
+	
+	/** has access to query for users, request tokens on behalf of users etc */
+	useradmin;
 }

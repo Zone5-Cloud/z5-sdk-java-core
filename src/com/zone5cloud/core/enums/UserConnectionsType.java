@@ -22,5 +22,18 @@ public enum UserConnectionsType {
 	
 	ridewithgps,			// 9
 	
-	todaysplan;				// 10
+	todaysplan,				// 10
+	
+	suunto,					// 11
+	
+	garmintraining, 		// 12
+	
+	turbo,					// 13
+	
+	// Specialized Ride
+	specialized,			// 14
+	
+	nike,					// 15
+	
+	wahoo					// 16
 }

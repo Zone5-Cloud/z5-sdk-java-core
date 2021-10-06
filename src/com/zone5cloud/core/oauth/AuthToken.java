@@ -29,6 +29,11 @@ public abstract class AuthToken {
 		return getTokenExp() != null && getTokenExp() < System.currentTimeMillis() + 30000;
 	}
 	
+	/** Test whether the token is refreshable and requires refresh */
+	public boolean requiresRefresh() {
+		return getRefreshToken() != null && (getTokenExp() == null || isExpired());
+	}
+	
 	
 	@Override
 	public boolean equals(Object other) {

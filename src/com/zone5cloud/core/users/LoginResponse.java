@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.zone5cloud.core.company.Company;
 import com.zone5cloud.core.enums.Roles;
+import com.zone5cloud.core.oauth.OAuthToken;
+import com.zone5cloud.core.terms.TermsAndConditions;
 
 /** Return object from a login */
 public class LoginResponse {
@@ -31,6 +33,10 @@ public class LoginResponse {
 	
 	/** Bearer token expiry (seconds from now) */
 	private Integer expiresIn;
+	
+	private List<TermsAndConditions> updatedTerms;
+	
+	private Boolean needChangePassword;
 	
 	public LoginResponse() { }
 
@@ -96,5 +102,26 @@ public class LoginResponse {
 
 	public void setExpiresIn(Integer expiresIn) {
 		this.expiresIn = expiresIn;
+	}
+
+	public List<TermsAndConditions> getUpdatedTerms() {
+		return updatedTerms;
+	}
+
+	public void setUpdatedTerms(List<TermsAndConditions> updatedTerms) {
+		this.updatedTerms = updatedTerms;
+	}
+
+	public Boolean getNeedChangePassword() {
+		return needChangePassword;
+	}
+
+	public void setNeedChangePassword(Boolean needChangePassword) {
+		this.needChangePassword = needChangePassword;
 	}	
+	
+	/** Convenience method to create an OAuthToken from this login response object */
+	public OAuthToken getOAuthToken() {
+		return new OAuthToken(this);
+	}
 }

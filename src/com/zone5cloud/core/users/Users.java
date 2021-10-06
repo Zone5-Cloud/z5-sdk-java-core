@@ -8,7 +8,7 @@ public class Users {
 	public static final String NEW_ACCESS_TOKEN = "/rest/oauth/access_token";
 	public static final String NEW_ADHOC_ACCESS_TOKEN = "/rest/oauth/newtoken/{clientId}";
 	
-	public static final String ME = "/rest/users/me";
+	public static final String ME = "/rest/users";
 	
 	public static final String GET_USER_PREFERENCES = "/rest/users/prefs/{userId}";
 	public static final String SET_USER_PREFERENCES = "/rest/users/set/UserPreferences";
@@ -24,7 +24,7 @@ public class Users {
 	public static final String EMAIL_EXISTS = "/rest/auth/exists";
 	public static final String EMAIL_STATUS = "/rest/auth/status";
 	public static final String PASSWORD_RESET = "/rest/auth/reset";
-	public static final String CHANGE_PASSWORD_SPECIALIZED = "/rest/auth/set/password"; 
+	public static final String SET_PASSWORD = "/rest/auth/set/password"; 
 	public static final String REFRESH_TOKEN = "/rest/auth/refresh";
 
 	// Calls related to storing, retrieving and removing 3rd party OAuth connections
@@ -33,4 +33,5 @@ public class Users {
 	public static final String PASSWORD_COMPLEXITY = "/rest/auth/password-complexity";
 	public static final String RECONFIRM = "/rest/auth/reconfirm";
 
+	public static final String TEST_PASSWORD = "/rest/auth/test-password";
 }

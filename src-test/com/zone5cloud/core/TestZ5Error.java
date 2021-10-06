@@ -31,5 +31,12 @@ public class TestZ5Error {
 		assertNotNull(error);
 		assertEquals("Unauthorized", error.getMessage());
 	}
+	
+	@Test
+	public void testErrorTerms() {
+		Z5Error error = GsonManager.getInstance().fromJson("{\"error\":\"true\",\"message\":\"this is an error\",\"errors\":[{\"field\":\"this is a field\",\"code\":401908,\"message\":\"failed terms\", \"metadata\":{\"required\":[\"terms1\", \"terms2\"]}}]}", Types.ERROR);
+		assertEquals("terms1", error.getErrorItem(0).getMetadata().getRequiredTerms().get(0));
+		assertEquals("terms2", error.getErrorItem(0).getMetadata().getRequiredTerms().get(1));
+	}
 
 }

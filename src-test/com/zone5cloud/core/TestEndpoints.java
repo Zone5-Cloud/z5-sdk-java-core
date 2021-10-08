@@ -22,6 +22,7 @@ public class TestEndpoints {
 		assertFalse(Endpoints.requiresAuth(Users.PASSWORD_RESET));
 		assertFalse(Endpoints.requiresAuth(Users.EMAIL_EXISTS));
 		assertFalse(Endpoints.requiresAuth(Users.EMAIL_STATUS));
+		assertFalse(Endpoints.requiresAuth(Users.TEST_PASSWORD));
 		
 		assertFalse(Endpoints.requiresAuth(Users.REFRESH_TOKEN));
 		assertFalse(Endpoints.requiresAuth(Terms.REQUIRED));

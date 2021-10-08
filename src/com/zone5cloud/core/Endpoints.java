@@ -19,6 +19,7 @@ public class Endpoints {
 		auth.put(Users.REFRESH_TOKEN, false);
 		auth.put(Terms.REQUIRED, false);
 		auth.put(Terms.DOWNLOAD, false);
+		auth.put(Users.TEST_PASSWORD, false);
 	}
 	
 	private Endpoints() {}

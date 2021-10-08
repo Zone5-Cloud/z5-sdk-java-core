@@ -1,5 +1,6 @@
 package com.zone5cloud.core.users;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AuthenticationRequest {
@@ -79,5 +80,13 @@ public abstract class AuthenticationRequest {
 
 	public void setBillingCountry(String billingCountry) {
 		this.billingCountry = billingCountry;
+	}
+	
+	public void addAccept(String accept) {
+		if (this.accept == null) {
+			this.accept = new ArrayList<>(1);
+		}
+		
+		this.accept.add(accept);
 	}
 }

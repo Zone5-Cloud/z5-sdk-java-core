@@ -5,6 +5,12 @@ import java.util.HashMap;
 import com.zone5cloud.core.terms.Terms;
 import com.zone5cloud.core.users.Users;
 
+/**
+ * Instead of using this class, use the @Unauthenticated annotation on the request declaration
+ * 
+ * The use of @Unauthenticated has been implemented in the retrofit library but needs to be done in the Http library.
+ * Once it has been done in the http library this class can be deleted
+ */
 public class Endpoints {
 	private static final HashMap<String, Boolean> auth = new HashMap<>(); 
 	static {

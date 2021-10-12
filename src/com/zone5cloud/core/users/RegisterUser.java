@@ -1,6 +1,7 @@
 package com.zone5cloud.core.users;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -60,6 +61,11 @@ public class RegisterUser {
 	
 	/** Optional - Use this to request association with a specific company based on the company nic */
 	private String tags;
+	
+	/** Allow for in-line acceptance of terms & conditions ids */
+	private List<String> accept;
+	
+	private String billingCountry;
 	
 	/** Optional - Custom registration directives */
 	private Map<String, String> params;
@@ -224,5 +230,21 @@ public class RegisterUser {
 	
 	public void setDob(Long dob) {
 		this.dob = dob;
+	}
+
+	public List<String> getAccept() {
+		return accept;
+	}
+
+	public void setAccept(List<String> accept) {
+		this.accept = accept;
+	}
+
+	public String getBillingCountry() {
+		return billingCountry;
+	}
+
+	public void setBillingCountry(String billingCountry) {
+		this.billingCountry = billingCountry;
 	}
 }

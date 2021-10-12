@@ -22,6 +22,7 @@ import com.zone5cloud.core.thirdpartyconnections.PushRegistrationResponse;
 import com.zone5cloud.core.thirdpartyconnections.ThirdPartyTokenResponse;
 import com.zone5cloud.core.thirdpartyconnections.UpgradeAvailableResponse;
 import com.zone5cloud.core.users.LoginResponse;
+import com.zone5cloud.core.users.RefreshRequest;
 import com.zone5cloud.core.users.User;
 import com.zone5cloud.core.users.UserPreferences;
 import com.zone5cloud.core.workouts.UserWorkoutSummary;
@@ -45,6 +46,7 @@ public class Types {
 	public static final Type RESULT_RIDE = new TypeToken<UserScheduledActivity>(){}.getType();
 	public static final Type USER = new TypeToken<User>(){}.getType();
 	public static final Type USER_PREFERENCES = new TypeToken<UserPreferences>(){}.getType();
+	public static final Type REFRESH_REQUEST = new TypeToken<RefreshRequest>(){}.getType();
 	public static final Type LOGIN_RESPONSE = new TypeToken<LoginResponse>(){}.getType();
 	public static final Type MAP = new TypeToken<Map<String,Object>>(){}.getType();
 	public static final Type MAP_BOOLEAN = new TypeToken<Map<String,Boolean>>(){}.getType();

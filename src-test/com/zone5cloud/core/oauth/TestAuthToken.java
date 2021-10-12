@@ -16,20 +16,26 @@ public class TestAuthToken {
 	public void testExpiry() {
 		OAuthToken token = new OAuthToken();
 		token.setToken("123");
+		
 		assertFalse(token.isExpired());
+		assertFalse(token.requiresRefresh()); // not refreshable
 		
 		token.setRefreshToken("zxc");
 		assertFalse(token.isExpired());
+		assertTrue(token.requiresRefresh()); // is refreshable and no tokenExp will prompt refresh
 		
 		token.setRefreshToken(null);
 		token.setTokenExp(System.currentTimeMillis());
 		assertTrue(token.isExpired());
+		assertFalse(token.requiresRefresh()); // even though expired, not refreshable
 		
 		token.setRefreshToken("zxc");
 		assertTrue(token.isExpired());
+		assertTrue(token.requiresRefresh()); // refreshable and expired
 		
 		token.setTokenExp(System.currentTimeMillis() + 60000);
 		assertFalse(token.isExpired());
+		assertFalse(token.requiresRefresh()); // refreshable, but not expired
 	}
 	
 	@Test

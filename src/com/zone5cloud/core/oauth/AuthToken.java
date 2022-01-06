@@ -2,19 +2,47 @@ package com.zone5cloud.core.oauth;
 
 import java.util.Objects;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Capture the essentials of a token used in the bearer authorization header.
  * This can be either an OAuthToken or an OAuthTokenAlt (deprecated)
  * @author jean
  *
  */
-public abstract class AuthToken {
-	/** OAuth token */
-	public abstract String getToken();
-	/** Refresh token used to refresh */
-	public abstract String getRefreshToken();
-	/** Expiry as a unix timestamp in ms */
-	public abstract Long getTokenExp();
+public class AuthToken {
+	@SerializedName(value = "access_token", alternate = "token")
+	private String token;
+	
+	@SerializedName("refresh_token")
+	private String refreshToken;
+
+	private Long tokenExp;
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String accessToken) {
+		this.token = accessToken;
+	}
+
+	public String getRefreshToken() {
+		return refreshToken;
+	}
+
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
+
+	public Long getTokenExp() {
+		return tokenExp;
+	}
+
+	public void setTokenExp(Long tokenExp) {
+		this.tokenExp = tokenExp;
+	}
+
 	
 	/**
 	 * Get the formatted Authorization header value

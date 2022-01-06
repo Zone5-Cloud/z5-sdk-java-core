@@ -2,13 +2,13 @@ package com.zone5cloud.core;
 
 import java.net.URL;
 
-import com.zone5cloud.core.oauth.AuthToken;
+import com.zone5cloud.core.oauth.OAuthToken;
 import com.zone5cloud.core.utils.ILogger;
 
 public class ClientConfig {
     // The initial authorization token to be used in the Authorization header for all requests which require it.
     // token may be null and can be set later via setToken(), or automatically set with a login request
-    private AuthToken token = null;
+    private OAuthToken token = null;
 
     // Authentication service API key, Your OAuth app clientId (optional for S-Digital systems)
     private String clientID = null;
@@ -23,9 +23,9 @@ public class ClientConfig {
     
     private ILogger logger = null;
 
-    public AuthToken getToken() { return token; }
+    public OAuthToken getToken() { return token; }
 
-    public void setToken(AuthToken token) { this.token = token; }
+    public void setToken(OAuthToken token) { this.token = token; }
 
     public String getClientID() {
         return clientID;

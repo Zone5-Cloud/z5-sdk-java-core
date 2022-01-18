@@ -5,8 +5,12 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.junit.Test;
 
+import com.zone5cloud.core.ClientConfig;
 import com.zone5cloud.core.Types;
 import com.zone5cloud.core.utils.GsonManager;
 
@@ -115,5 +119,28 @@ public class TestAuthToken {
 		
 		assertEquals("123", token.getToken());
 		assertEquals(10l, token.getTokenExp().longValue());
+	}
+	
+	@Test
+	public void testSerialise() throws MalformedURLException {
+		ClientConfig config = new ClientConfig();
+		config.setClientID("testID");
+		config.setClientSecret("testSecret");
+		config.setUserName("test@username");
+		config.setToken(new OAuthToken("test-token", "test-refresh", 40000l));
+		config.setZone5BaseUrl(new URL("https://test.com"));
+		
+		String configStr = GsonManager.getInstance().toJson(config);
+		
+		ClientConfig decoded = GsonManager.getInstance().fromJson(configStr, ClientConfig.class);
+		
+		assertEquals("testID", decoded.getClientID());
+		assertEquals("testSecret", decoded.getClientSecret());
+		assertEquals("test@username", decoded.getUserName());
+		assertEquals("test-token", decoded.getToken().getToken());
+		assertEquals("test-refresh", decoded.getToken().getRefreshToken());
+		assertEquals("https://test.com", decoded.getZone5BaseUrl().toString());
+		assertEquals(40000l, decoded.getToken().getTokenExp().longValue());
+		
 	}
 }

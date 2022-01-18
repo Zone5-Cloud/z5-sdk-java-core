@@ -3,6 +3,7 @@ package com.zone5cloud.core.oauth;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
@@ -12,7 +13,9 @@ import org.junit.Test;
 
 import com.zone5cloud.core.ClientConfig;
 import com.zone5cloud.core.Types;
+import com.zone5cloud.core.utils.DefaultLogger;
 import com.zone5cloud.core.utils.GsonManager;
+import com.zone5cloud.core.utils.ILogger;
 
 public class TestAuthToken {
 
@@ -129,6 +132,7 @@ public class TestAuthToken {
 		config.setUserName("test@username");
 		config.setToken(new OAuthToken("test-token", "test-refresh", 40000l));
 		config.setZone5BaseUrl(new URL("https://test.com"));
+		config.setLogger(new DefaultLogger());
 		
 		String configStr = GsonManager.getInstance().toJson(config);
 		
@@ -141,6 +145,7 @@ public class TestAuthToken {
 		assertEquals("test-refresh", decoded.getToken().getRefreshToken());
 		assertEquals("https://test.com", decoded.getZone5BaseUrl().toString());
 		assertEquals(40000l, decoded.getToken().getTokenExp().longValue());
+		assertNull(decoded.getLogger()); // logger is transient
 		
 	}
 }

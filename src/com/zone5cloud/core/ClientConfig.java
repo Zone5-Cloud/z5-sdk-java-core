@@ -21,7 +21,7 @@ public class ClientConfig {
 
     private URL zone5BaseUrl = null;
     
-    private ILogger logger = null;
+    private transient ILogger logger = null;
 
     public AuthToken getToken() { return token; }
 

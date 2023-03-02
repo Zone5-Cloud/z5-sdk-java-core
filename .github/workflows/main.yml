@@ -27,5 +27,11 @@ jobs:
         USER: $GITHUB_ACTOR
       run: |
         echo "<settings><servers><server><id>github</id><username>${USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
-        sed 's/${revision}'"/${GITHUB_REF##*/}/g" pom.xml > pom.xml
+        echo "pom1:"
+        cat pom.xml
+        sed 's/${revision}'"/${GITHUB_REF##*/}/g" pom.xml > pom2.xml
+        echo "pom2:"
+        cat pom2.xml
+        rm pom.xml
+        mv pom2.xml pom.xml
         mvn deploy

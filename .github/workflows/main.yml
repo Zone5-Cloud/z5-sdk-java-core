@@ -23,10 +23,9 @@ jobs:
 
     - name: Deploy to Github Package Registry
       env:
-        CICD_PAT: ${{ secrets.CICD_PAT }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         USER: $GITHUB_ACTOR
       run: |
-        echo "<settings><servers><server><id>core</id><username>zone5-sdk-sdigital</username><password>${CICD_PAT}</password></server><server><id>github</id><username>${USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+        echo "<settings><servers><server><id>github</id><username>${USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
         sed 's/${revision}'"/${GITHUB_REF##*/}/g" pom.xml > pom2.xml
-        mvn -e -X deploy -f pom2.xml
+        mvn deploy -f pom2.xml

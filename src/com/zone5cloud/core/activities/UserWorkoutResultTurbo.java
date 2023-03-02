@@ -52,6 +52,7 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	private Double timeInAssist2P;
 	private Double timeInAssist3P;
 	private Double timeInAssist4P;
+	private Double timeInAssist5P;
 	
 	// Cumulative % decay per assist mode
 	private Integer bat1DecayAssist0P;
@@ -59,6 +60,7 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	private Integer bat1DecayAssist2P;
 	private Integer bat1DecayAssist3P;
 	private Integer bat1DecayAssist4P;
+	private Integer bat1DecayAssist5P;
 	
 	// Cumulative % decay per assist mode
 	private Integer bat2DecayAssist0P;
@@ -66,6 +68,7 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	private Integer bat2DecayAssist2P;
 	private Integer bat2DecayAssist3P;
 	private Integer bat2DecayAssist4P;
+	private Integer bat2DecayAssist5P;
 	
 	public UserWorkoutResultTurbo() { }
 
@@ -349,6 +352,14 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 		this.timeInAssist4P = timeInAssist4P;
 	}
 
+	public Double getTimeInAssist5P() {
+		return timeInAssist5P;
+	}
+
+	public void setTimeInAssist5P(Double timeInAssist5P) {
+		this.timeInAssist5P = timeInAssist5P;
+	}
+
 	public Integer getBat1DecayAssist0P() {
 		return bat1DecayAssist0P;
 	}
@@ -389,6 +400,14 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 		this.bat1DecayAssist4P = bat1DecayAssist4P;
 	}
 
+	public Integer getBat1DecayAssist5P() {
+		return bat1DecayAssist5P;
+	}
+
+	public void setBat1DecayAssist5P(Integer bat1DecayAssist5P) {
+		this.bat1DecayAssist5P = bat1DecayAssist5P;
+	}
+
 	public Integer getBat2DecayAssist0P() {
 		return bat2DecayAssist0P;
 	}
@@ -427,5 +446,13 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 
 	public void setBat2DecayAssist4P(Integer bat2DecayAssist4P) {
 		this.bat2DecayAssist4P = bat2DecayAssist4P;
+	}
+
+	public Integer getBat2DecayAssist5P() {
+		return bat2DecayAssist5P;
+	}
+
+	public void setBat2DecayAssist5P(Integer bat2DecayAssist5P) {
+		this.bat2DecayAssist5P = bat2DecayAssist5P;
 	}
 }

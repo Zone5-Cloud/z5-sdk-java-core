@@ -52,6 +52,8 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	private Double timeInAssist2P;
 	private Double timeInAssist3P;
 	private Double timeInAssist4P;
+	private Double timeInAssist5P;
+	private Double timeInAssist6P;
 	
 	// Cumulative % decay per assist mode
 	private Integer bat1DecayAssist0P;
@@ -59,6 +61,8 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	private Integer bat1DecayAssist2P;
 	private Integer bat1DecayAssist3P;
 	private Integer bat1DecayAssist4P;
+	private Integer bat1DecayAssist5P;
+	private Integer bat1DecayAssist6P;
 	
 	// Cumulative % decay per assist mode
 	private Integer bat2DecayAssist0P;
@@ -67,6 +71,9 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 	private Integer bat2DecayAssist3P;
 	private Integer bat2DecayAssist4P;
 	
+	private Integer bat2DecayAssist5P;
+	private Integer bat2DecayAssist6P;
+
 	public UserWorkoutResultTurbo() { }
 
 	public String getProduct() {
@@ -427,5 +434,37 @@ public class UserWorkoutResultTurbo extends SearchableDataObject {
 
 	public void setBat2DecayAssist4P(Integer bat2DecayAssist4P) {
 		this.bat2DecayAssist4P = bat2DecayAssist4P;
+	}
+
+	public Integer getBat2DecayAssist5P() {
+		return bat2DecayAssist5P;
+	}
+
+	public void setBat2DecayAssist5P(Integer bat2DecayAssist5P) {
+		this.bat2DecayAssist5P = bat2DecayAssist5P;
+	}
+
+	public Double getTimeInAssist6P() {
+		return timeInAssist6P;
+	}
+
+	public void setTimeInAssist6P(Double timeInAssist6P) {
+		this.timeInAssist6P = timeInAssist6P;
+	}
+
+	public Integer getBat1DecayAssist6P() {
+		return bat1DecayAssist6P;
+	}
+
+	public void setBat1DecayAssist6P(Integer bat1DecayAssist6P) {
+		this.bat1DecayAssist6P = bat1DecayAssist6P;
+	}
+
+	public Integer getBat2DecayAssist6P() {
+		return bat2DecayAssist6P;
+	}
+
+	public void setBat2DecayAssist6P(Integer bat2DecayAssist6P) {
+		this.bat2DecayAssist6P = bat2DecayAssist6P;
 	}
 }

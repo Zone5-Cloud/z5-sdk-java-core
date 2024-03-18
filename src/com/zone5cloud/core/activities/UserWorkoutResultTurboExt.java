@@ -24,8 +24,8 @@ public class UserWorkoutResultTurboExt extends SearchableDataObject {
 	private Integer bat1DecayAssist2Wh; // Watt hours
 	private Integer bat1DecayAssist3Wh; // Watt hours
 	private Integer bat1DecayAssist4Wh; // Watt hours
-	//private Integer bat1DecayAssist5Wh; // Watt hours
-	//private Integer bat1DecayAssist6Wh; // Watt hours
+	private Integer bat1DecayAssist5Wh; // Watt hours
+	private Integer bat1DecayAssist6Wh; // Watt hours
 		
 	// Cumulative Wh consumption per assist mode
 	private Integer bat2DecayAssist0Wh; // Watt hours
@@ -33,8 +33,8 @@ public class UserWorkoutResultTurboExt extends SearchableDataObject {
 	private Integer bat2DecayAssist2Wh; // Watt hours
 	private Integer bat2DecayAssist3Wh; // Watt hours
 	private Integer bat2DecayAssist4Wh; // Watt hours
-	//private Integer bat2DecayAssist5Wh; // Watt hours
-	//private Integer bat2DecayAssist6Wh; // Watt hours
+	private Integer bat2DecayAssist5Wh; // Watt hours
+	private Integer bat2DecayAssist6Wh; // Watt hours
 	
 	// Average support factor in this mode
 	private Double supportFactorAssist0; // ratio
@@ -42,8 +42,8 @@ public class UserWorkoutResultTurboExt extends SearchableDataObject {
 	private Double supportFactorAssist2; // ratio
 	private Double supportFactorAssist3; // ratio
 	private Double supportFactorAssist4; // ratio
-	//private Double supportFactorAssist5; // ratio // future proof
-	//private Double supportFactorAssist6; // ratio // future proof
+	private Double supportFactorAssist5; // ratio // future proof
+	private Double supportFactorAssist6; // ratio // future proof
 	
 	private Double avgGPSSpeed;
 	
@@ -223,6 +223,54 @@ public class UserWorkoutResultTurboExt extends SearchableDataObject {
 
 	public void setBat2DecayAssist4Wh(Integer bat2DecayAssist4Wh) {
 		this.bat2DecayAssist4Wh = bat2DecayAssist4Wh;
+	}
+
+	public Integer getBat1DecayAssist5Wh() {
+		return bat1DecayAssist5Wh;
+	}
+
+	public void setBat1DecayAssist5Wh(Integer bat1DecayAssist5Wh) {
+		this.bat1DecayAssist5Wh = bat1DecayAssist5Wh;
+	}
+
+	public Integer getBat1DecayAssist6Wh() {
+		return bat1DecayAssist6Wh;
+	}
+
+	public void setBat1DecayAssist6Wh(Integer bat1DecayAssist6Wh) {
+		this.bat1DecayAssist6Wh = bat1DecayAssist6Wh;
+	}
+
+	public Integer getBat2DecayAssist5Wh() {
+		return bat2DecayAssist5Wh;
+	}
+
+	public void setBat2DecayAssist5Wh(Integer bat2DecayAssist5Wh) {
+		this.bat2DecayAssist5Wh = bat2DecayAssist5Wh;
+	}
+
+	public Integer getBat2DecayAssist6Wh() {
+		return bat2DecayAssist6Wh;
+	}
+
+	public void setBat2DecayAssist6Wh(Integer bat2DecayAssist6Wh) {
+		this.bat2DecayAssist6Wh = bat2DecayAssist6Wh;
+	}
+
+	public Double getSupportFactorAssist5() {
+		return supportFactorAssist5;
+	}
+
+	public void setSupportFactorAssist5(Double supportFactorAssist5) {
+		this.supportFactorAssist5 = supportFactorAssist5;
+	}
+
+	public Double getSupportFactorAssist6() {
+		return supportFactorAssist6;
+	}
+
+	public void setSupportFactorAssist6(Double supportFactorAssist6) {
+		this.supportFactorAssist6 = supportFactorAssist6;
 	}
 
 	public Double getSupportFactorAssist0() {
